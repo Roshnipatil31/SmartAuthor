@@ -27,7 +27,7 @@ export const SignUpcontainer = styled.div`
     justify-content: center;
     width: 400px;
     position: relative;
-    background-color: #fff;
+    background-color: ${theme.colors.white};
     margin-top: 5rem;
     padding: 15px;
     border-radius: 5px;
@@ -62,6 +62,7 @@ export const Input = styled.input`
     outline: none;
     font-size: ${theme.font.size.xsmall};
     background-color:${theme.colors.inputbg};
+    color: ${theme.colors.header};
     &:hover{
         box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
     }
