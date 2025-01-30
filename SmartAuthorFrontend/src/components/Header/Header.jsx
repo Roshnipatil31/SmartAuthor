@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Nav, Logo, NavMenu, NavItem, NavLink, ProfileImage, NavContainer } from "./Header.styles";
-import LogoImage from "../../assets/logo.png";  // Adjust path based on your folder structure
-import ProfilePic from "../../assets/profile.png"; // Adjust accordingly
+import { Nav, Logo, NavMenu, NavItem, StyledNavLink, ProfileImage, NavContainer } from "./Header.styles";
+import { Link } from "react-router-dom";  
+import LogoImage from "../../assets/logo.png";
+import ProfilePic from "../../assets/profile.png";
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState("Home");
@@ -12,24 +13,24 @@ const Header = () => {
       <NavContainer>
         <NavMenu>
           <NavItem>
-            <NavLink href="#" isActive={activeTab === "Home"} onClick={() => setActiveTab("Home")}>
+            <StyledNavLink to="/" isActive={activeTab === "Home"} onClick={() => setActiveTab("Home")}>
               Home
-            </NavLink>
+            </StyledNavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" isActive={activeTab === "My Books"} onClick={() => setActiveTab("My Books")}>
+            <StyledNavLink to="/my-books" isActive={activeTab === "My Books"} onClick={() => setActiveTab("My Books")}>
               My Books
-            </NavLink>
+            </StyledNavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" isActive={activeTab === "Library"} onClick={() => setActiveTab("Library")}>
+            <StyledNavLink to="/library" isActive={activeTab === "Library"} onClick={() => setActiveTab("Library")}>
               Library
-            </NavLink>
+            </StyledNavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" isActive={activeTab === "Contact US"} onClick={() => setActiveTab("Contact US")}>
+            <StyledNavLink to="/contact-us" isActive={activeTab === "Contact US"} onClick={() => setActiveTab("Contact US")}>
               Contact US
-            </NavLink>
+            </StyledNavLink>
           </NavItem>
         </NavMenu>
         <ProfileImage src={ProfilePic} alt="Profile" />
