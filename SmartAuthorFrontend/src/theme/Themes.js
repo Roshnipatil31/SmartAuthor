@@ -1,11 +1,16 @@
 const theme = {
   colors: {
     navy: "#265073",
+    blue: "#6652F7",
     header: "#595959",
     inputborder: "#DBDBDB",
     inputbg: "#1414140A",
     white: "#fff",
     black: "#000",
+    blur: "#aeaeae",
+    lightblur: "#0000001A",
+    blue1: "#6652F726",
+    transparnt: "transparent",
   },
   font: {
     size: {
@@ -18,6 +23,7 @@ const theme = {
     },
     Headerfamily: "'Post No Bills Colombo extrabold', sans-serif",
     family: "'poppins', sans-serif",
+    interfamily: "'Inter', sans-serif",
   },
   breakpoint: {
     xxxl: "1600px",
