@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../../theme/Themes";
+import theme from "../../../../theme/Themes";
 
 export const DashboardWapper = styled.div`
     display: flex;
@@ -26,6 +26,6 @@ export const BookGif = styled.img`
 export const DashboardContent = styled.div`
     display: flex;
     flex-direction: column;
-    
+
     width: 80%;
 `;  
