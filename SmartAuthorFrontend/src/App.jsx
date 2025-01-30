@@ -22,3 +22,24 @@ function App() {
 }
 
 export default App;
+
+// import "./App.css";
+// import React from "react";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import SignUpPage from "./Pages/signupPage/signUpPage";
+// import LoginPage from "./Pages/LoginPage/LoginPage";
+// import Header from "./components/Header/Header";
+
+// function App() {
+//   return (
+//     <Router>
+//       <Header />  {/* Moved Header outside Routes so it appears on all pages */}
+//       <Routes>
+//         <Route path="/signup" element={<SignUpPage />} />
+//         <Route path="/login" element={<LoginPage />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+// export default App;
