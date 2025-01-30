@@ -5,6 +5,7 @@ import SignUpPage from "./Pages/signupPage/signUpPage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import Header from "./components/Header/Header";
 import SurveyForm from "./Pages/SurveyForm/SurveyForm";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/surveyform" element={<SurveyForm />} />
         <Route path="/header" element={<Header />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
     </BrowserRouter>
   );
