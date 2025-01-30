@@ -31,11 +31,11 @@ const SignUpPage = () => {
           </FormGroup>
           <FormGroup>
             <Label> Email</Label>
-            <Input type="email" placeholder="Enter Email" />
+            <Input type="email" placeholder="Enter your Email here" />
           </FormGroup>
           <FormGroup>
             <Label> Password</Label>
-            <Input type="password" placeholder="Enter Password" />
+            <Input type="password" placeholder="Enter your Password" />
           </FormGroup>
           <Button type="submit">Sign Up</Button>
         </Form>

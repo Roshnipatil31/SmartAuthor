@@ -28,11 +28,11 @@ const LoginPage = () => {
         <Form>
           <FormGroup>
             <Label> Email</Label>
-            <Input type="email" placeholder="Enter Email" />
+            <Input type="email" placeholder="Enter your Email here" />
           </FormGroup>
           <FormGroup>
             <Label> Password</Label>
-            <Input type="password" placeholder="Enter Password" />
+            <Input type="password" placeholder="Enter your Password" />
           </FormGroup>
           <Button type="submit">Log In</Button>
         </Form>
