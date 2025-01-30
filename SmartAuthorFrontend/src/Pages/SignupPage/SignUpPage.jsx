@@ -19,7 +19,7 @@ const SignUpPage = () => {
     <SignUpPageWrapper>
       <SignUpBgImage src= {bgimage} alt="bgimage"/>
       <SignUpcontainer>
-        <SignUpHeader> Smart Author </SignUpHeader>
+        <SignUpHeader> Smartauthor </SignUpHeader>
         <Form>
           <FormGroup>
             <Label> Full Name</Label>
