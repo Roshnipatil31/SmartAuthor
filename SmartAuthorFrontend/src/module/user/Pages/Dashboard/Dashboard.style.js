@@ -4,7 +4,7 @@ import theme from "../../../../theme/Themes";
 export const DashboardWapper = styled.div`
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100vw;
 `;
 
