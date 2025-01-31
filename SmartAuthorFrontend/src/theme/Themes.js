@@ -1,3 +1,5 @@
+import { TbBackground } from "react-icons/tb";
+
 const theme = {
   colors: {
     navy: "#265073",
@@ -14,6 +16,7 @@ const theme = {
     blue1: "#6652F726",
     transparnt: "transparent",
     Green: "#26A541",
+    BackgroundGradient: "linear-gradient(to bottom, #265073 0%, #F9F7EE 100%)", 
   },
   font: {
     size: {

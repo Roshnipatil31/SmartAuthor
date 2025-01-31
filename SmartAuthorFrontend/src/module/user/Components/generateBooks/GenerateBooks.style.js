@@ -41,7 +41,7 @@ export const GenerateIcon = styled.div`
     align-items: center;
     border: 2px dashed ${theme.colors.inputborder};
     border-radius: 20px;
-
+    cursor: pointer;
     width: 100px;
     height: 100px;
     margin: 10px;

@@ -67,6 +67,7 @@ export const TemplateFooter = styled.div`
   text-align: center;
   font-size: 14px;
   font-weight: bold;
+  font-family: ${theme.font.family};
   color: #fff;
   border-top: 1px solid #ddd;
 `;
