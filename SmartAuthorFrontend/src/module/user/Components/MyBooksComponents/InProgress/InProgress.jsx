@@ -31,8 +31,8 @@ const InProgress = () => {
           <ProgressBar>
             <div style={{ width: `${inProgressBook.progress}%` }} />
           </ProgressBar>
-        </BookDetails>
-        <ContinueButton>Continue writing</ContinueButton>
+        </BookDetails >
+        <ContinueButton onClick={() => alert("Feature coming soon!")}>Continue writing</ContinueButton>
       </BookCard>
     </InProgressContainer>
   );

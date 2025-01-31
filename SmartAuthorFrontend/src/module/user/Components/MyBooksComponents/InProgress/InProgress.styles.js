@@ -48,13 +48,13 @@ export const ProgressBar = styled.div`
 
   div {
     height: 100%;
-    background: ${theme.colors.blue};
+    background: ${theme.colors.Green};
     border-radius: 5px;
   }
 `;
 
 export const ContinueButton = styled.button`
-  background-color: ${theme.colors.blue};
+  background-color: ${theme.colors.navy};
   color: ${theme.colors.white};
   border: none;
   padding: 10px;
@@ -63,6 +63,6 @@ export const ContinueButton = styled.button`
   font-size: ${theme.font.size.medium};
 
   &:hover {
-    background-color: ${theme.colors.navy};
+    background-color: ${theme.colors.blue};
   }
 `;
