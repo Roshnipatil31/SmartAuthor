@@ -1,0 +1,17 @@
+<svg
+  width="50"
+  height="50"
+  viewBox="0 0 50 50"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Outer Square (Full border except top-right corner) -->
+  <path d="M5 5 H35 V5 M5 5 V45 H45 V15" stroke="#4F4F4F" stroke-width="2" fill="none"/>
+
+  <!-- AI Text -->
+  <text x="15" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#4F4F4F">AI</text>
+
+  <!-- Plus Sign in Top-Right -->
+  <line x1="38" y1="8" x2="46" y2="8" stroke="#4F4F4F" stroke-width="2"/> <!-- Horizontal line -->
+  <line x1="42" y1="4" x2="42" y2="12" stroke="#4F4F4F" stroke-width="2"/> <!-- Vertical line -->
+</svg>

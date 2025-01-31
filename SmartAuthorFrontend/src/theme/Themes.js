@@ -20,6 +20,7 @@ const theme = {
       large: "20px",
       xlarge: "24px",
       xxlarge: "30px",
+      xxxlarge: "46px", 
     },
     Headerfamily: "'Post No Bills Colombo extrabold', sans-serif",
     family: "'poppins', sans-serif",

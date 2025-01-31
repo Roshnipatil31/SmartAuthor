@@ -10,10 +10,10 @@ import Dashboard from "./module/user/Pages/Dashboard/Dashboard";
 // import MyLibrary from "./Pages/MyLibrary/MyLibrary"; // Ensure MyLibrary is imported
 
 // Layout for Dashboard & MyLibrary
-const DashboardLayout = ({ props }) => (
+const DashboardLayout = ({ children }) => (
   <>
     <Header />
-    {props}
+    {children}
     <Footer />
   </>
 );
