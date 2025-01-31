@@ -13,6 +13,7 @@ const theme = {
     lightblur: "#0000001A",
     blue1: "#6652F726",
     transparnt: "transparent",
+    Green: "#26A541",
   },
   font: {
     size: {
