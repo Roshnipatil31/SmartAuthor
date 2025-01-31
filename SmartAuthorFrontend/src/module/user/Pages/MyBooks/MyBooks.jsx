@@ -1,6 +1,6 @@
 import React from "react";
-import Books from "../../Components/MyBooksComponents/Books";
-import InProgress from "../../Components/MyBooksComponents/InProgress";
+import Books from "../../Components/MyBooksComponents/Books/Books";
+import InProgress from "../../Components/MyBooksComponents/InProgress/InProgress";
 import { Container, Header, NewBookButton } from "./MyBooks.styles";
 
 const MyBooks = () => {
@@ -8,7 +8,9 @@ const MyBooks = () => {
     <Container>
       <Header>
         <h2>My Books</h2>
-        <NewBookButton>Write a new book</NewBookButton>
+        <NewBookButton onClick={() => alert("Feature coming soon!")}>
+          Write a new book
+        </NewBookButton>
       </Header>
       <Books />
       <h2>In Progress</h2>
