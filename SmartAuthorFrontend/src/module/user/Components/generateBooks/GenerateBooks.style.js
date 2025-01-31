@@ -29,8 +29,9 @@ export const GeneratebooksContent = styled.div`
 export const GenerateBook = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    margin-top: 20px;
     width: 100%;
 `;
 
@@ -63,16 +64,19 @@ export const GenerateParagraph = styled.div`
 `;
 
 export const GenerateIconTitle = styled.p`
-    color: ${theme.colors.black};
-    font-size: ${theme.font.size.xlarge};
+    color: ${theme.colors.blue2};
+    font-size: ${theme.font.size.small};
     font-weight: bold;
-    margin: 0;
+    font-family: ${theme.font.family};
+    margin: 0 0 10px 0;
+    width: 120px;
+    text-align: center;
 `;
 
 export const GenerateIconDescription = styled.p`
-    color: ${theme.colors.black};
+    color: ${theme.colors.gray};
     font-size: ${theme.font.size.small};
-    font-weight: bold;
+    text-align: center;
     margin: 0;
 `;
 

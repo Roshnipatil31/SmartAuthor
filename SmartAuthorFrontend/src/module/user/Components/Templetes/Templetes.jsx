@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { TempletesWapper, TempletesHeader, TempletesTitle } from './Templetes.style';
 
 const Templetes = () => {
   return (
-    <div>
-      
-    </div>
+    <TempletesWapper>
+      <TempletesHeader>
+        <TempletesTitle>Templetes</TempletesTitle>
+      </TempletesHeader>
+    </TempletesWapper>
   )
 }
 

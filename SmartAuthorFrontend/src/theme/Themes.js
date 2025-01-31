@@ -2,6 +2,8 @@ const theme = {
   colors: {
     navy: "#265073",
     blue: "#6652F7",
+    blue2: "#4897D9",
+    gray: "#747474",
     header: "#595959",
     inputborder: "#DBDBDB",
     inputbg: "#1414140A",
