@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../../../theme/Themes";
 
 export const Container = styled.div`
   padding: 20px;
@@ -11,14 +12,16 @@ export const Header = styled.div`
 `;
 
 export const NewBookButton = styled.button`
-  background-color: #1d4ed8;
-  color: white;
+  background-color: ${theme.colors.blue};
+  color: ${theme.colors.white};
   border: none;
   padding: 10px 15px;
+  font-family: ${theme.font.family};
+  font-size: ${theme.font.size.medium};
   cursor: pointer;
   border-radius: 5px;
-  
+
   &:hover {
-    background-color: #153bbb;
+    background-color: ${theme.colors.navy};
   }
 `;
