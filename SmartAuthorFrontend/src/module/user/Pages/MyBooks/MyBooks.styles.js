@@ -12,7 +12,7 @@ export const Header = styled.div`
 `;
 
 export const NewBookButton = styled.button`
-  background-color: ${theme.colors.blue};
+  background-color: ${theme.colors.navy};
   color: ${theme.colors.white};
   border: none;
   padding: 10px 15px;
@@ -22,6 +22,6 @@ export const NewBookButton = styled.button`
   border-radius: 5px;
 
   &:hover {
-    background-color: ${theme.colors.navy};
+    background-color: ${theme.colors.blue};
   }
 `;
