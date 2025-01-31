@@ -1,40 +1,107 @@
 import React, { useState } from "react";
-import { Nav, Logo, NavMenu, NavItem, StyledNavLink, ProfileImage, NavContainer } from "./Header.styles";
+import { 
+  Nav, Logo, NavMenu, NavItem, StyledNavLink, ProfileImage, NavContainer, Hamburger, MobileMenu 
+} from "./Header.styles";
 import { Link } from "react-router-dom";  
 import LogoImage from "../../assets/logo.png";
 import ProfilePic from "../../assets/profile.png";
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState("Home");
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <Nav>
       <Logo src={LogoImage} alt="Logo" />
-      <NavContainer>
+
+      {/* Hamburger Menu Button (Visible only on sm: (max-width: 576px)) */}
+      <Hamburger onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+        ☰
+      </Hamburger>
+
+      <NavContainer isOpen={isMobileMenuOpen}>
         <NavMenu>
           <NavItem>
-            <StyledNavLink to="/" isActive={activeTab === "Home"} onClick={() => setActiveTab("Home")}>
+            <StyledNavLink 
+              to="/dashboard" 
+              isActive={activeTab === "Home"} 
+              onClick={() => { setActiveTab("Home"); setMobileMenuOpen(false); }}
+            >
               Home
             </StyledNavLink>
           </NavItem>
           <NavItem>
-            <StyledNavLink to="/my-books" isActive={activeTab === "My Books"} onClick={() => setActiveTab("My Books")}>
+            <StyledNavLink 
+              to="/my-books" 
+              isActive={activeTab === "My Books"} 
+              onClick={() => { setActiveTab("My Books"); setMobileMenuOpen(false); }}
+            >
               My Books
             </StyledNavLink>
           </NavItem>
           <NavItem>
-            <StyledNavLink to="/library" isActive={activeTab === "Library"} onClick={() => setActiveTab("Library")}>
+            <StyledNavLink 
+              to="/library" 
+              isActive={activeTab === "Library"} 
+              onClick={() => { setActiveTab("Library"); setMobileMenuOpen(false); }}
+            >
               Library
             </StyledNavLink>
           </NavItem>
           <NavItem>
-            <StyledNavLink to="/contact-us" isActive={activeTab === "Contact US"} onClick={() => setActiveTab("Contact US")}>
+            <StyledNavLink 
+              to="/contact-us" 
+              isActive={activeTab === "Contact US"} 
+              onClick={() => { setActiveTab("Contact US"); setMobileMenuOpen(false); }}
+            >
               Contact US
             </StyledNavLink>
           </NavItem>
         </NavMenu>
+
         <ProfileImage src={ProfilePic} alt="Profile" />
       </NavContainer>
+
+      {isMobileMenuOpen && (
+        <MobileMenu>
+          <NavItem>
+            <StyledNavLink 
+              to="/dashboard" 
+              isActive={activeTab === "Home"} 
+              onClick={() => { setActiveTab("Home"); setMobileMenuOpen(false); }}
+            >
+              Home
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink 
+              to="/my-books" 
+              isActive={activeTab === "My Books"} 
+              onClick={() => { setActiveTab("My Books"); setMobileMenuOpen(false); }}
+            >
+              My Books
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink 
+              to="/library" 
+              isActive={activeTab === "Library"} 
+              onClick={() => { setActiveTab("Library"); setMobileMenuOpen(false); }}
+            >
+              Library
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink 
+              to="/contact-us" 
+              isActive={activeTab === "Contact US"} 
+              onClick={() => { setActiveTab("Contact US"); setMobileMenuOpen(false); }}
+            >
+              Contact US
+            </StyledNavLink>
+          </NavItem>
+        </MobileMenu>
+      )}
     </Nav>
   );
 };
