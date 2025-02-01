@@ -9,11 +9,13 @@ export const Nav = styled.nav`
   padding: 15px 30px;
   background-color: ${theme.colors.white};
   position: relative;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 export const Logo = styled.img`
   height: 50px;
   width: auto;
+  cursor: pointer;
 `;
 
 export const NavContainer = styled.div`
@@ -22,7 +24,7 @@ export const NavContainer = styled.div`
   justify-content: flex-end;
   flex-grow: 1;
 
-  @media ${theme.media.sm} {  /* Starts from (max-width: 576px) */
+  @media ${theme.media.sm} {  
     display: ${(props) => (props.isOpen ? "flex" : "none")};
     flex-direction: column;
     position: absolute;
@@ -38,10 +40,10 @@ export const NavContainer = styled.div`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  gap: 55px;
+  gap: 40px;
   margin-right: 20px;
 
-  @media ${theme.media.sm} { /* Hides main menu at (max-width: 576px) */
+  @media ${theme.media.sm} {
     display: none;
   }
 `;
@@ -59,6 +61,7 @@ export const MobileMenu = styled.div`
     top: 60px;
     left: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
   }
 `;
 
@@ -89,6 +92,22 @@ export const StyledNavLink = styled(NavLink)`
     width: ${(props) => (props.isActive ? "100%" : "0%")};
     height: 2px;
     background-color: ${theme.colors.navy};
+    transition: width 0.3s ease-in-out; 
+  }
+
+  // &:hover::after {
+  //   width: 100%;
+  // }
+`;
+
+
+export const ProfileWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
   }
 `;
 
@@ -98,6 +117,11 @@ export const ProfileImage = styled.img`
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const Hamburger = styled.div`
@@ -105,7 +129,7 @@ export const Hamburger = styled.div`
   font-size: 24px;
   cursor: pointer;
 
-  @media ${theme.media.sm} { /* Show hamburger from sm: (max-width: 576px) */
+  @media ${theme.media.sm} {  
     display: block;
   }
 `;
