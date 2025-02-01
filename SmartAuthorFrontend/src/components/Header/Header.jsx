@@ -59,7 +59,10 @@ const Header = () => {
           </NavItem>
         </NavMenu>
 
-        <ProfileImage src={ProfilePic} alt="Profile" />
+        {/* Profile Image Clickable - Navigates to Profile Page */}
+        <Link to="/profile">
+          <ProfileImage src={ProfilePic} alt="Profile" />
+        </Link>
       </NavContainer>
 
       {isMobileMenuOpen && (

@@ -10,6 +10,8 @@ import Dashboard from "./module/user/Pages/Dashboard/Dashboard";
 import MyBooks from "./module/user/Pages/MyBooks/MyBooks";
 import Library from "./module/user/Pages/Library/Library";
 import Step from "./module/user/Components/StepComponent/Step";
+import ContactUs from "./module/user/Pages/ContactUs/ContactUs";
+import Profile from "./module/user/Pages/Profile/Profile";
 
 // Layout for Dashboard & MyLibrary
 const DashboardLayout = ({ children }) => (
@@ -34,6 +36,8 @@ function App() {
         <Route path="/Step" element={<DashboardLayout><Step /></DashboardLayout>} />
         <Route path="/my-books" element={<DashboardLayout><MyBooks /></DashboardLayout>} />
         <Route path="/library" element={<DashboardLayout>< Library /></DashboardLayout>} />
+        <Route path="/contact-us" element={<DashboardLayout>< ContactUs /></DashboardLayout>} />
+        <Route path="/profile" element={<DashboardLayout>< Profile /></DashboardLayout>} />
       </Routes>
     </BrowserRouter>
   );
