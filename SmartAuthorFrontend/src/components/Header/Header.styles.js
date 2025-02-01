@@ -92,7 +92,7 @@ export const StyledNavLink = styled(NavLink)`
     width: ${(props) => (props.isActive ? "100%" : "0%")};
     height: 2px;
     background-color: ${theme.colors.navy};
-    transition: width 0.3s ease-in-out; 
+    // transition: width 0.3s ease-in-out; 
   }
 
   // &:hover::after {
