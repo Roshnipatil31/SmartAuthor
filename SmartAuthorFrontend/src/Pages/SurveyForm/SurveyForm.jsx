@@ -43,7 +43,7 @@ const SurveyForm = () => {
     } else {
       console.log("Submit", answers); // Handle submit logic here
     }
-    Navigate("/");
+    navigate("/dashboard");
   };
 
   const handleInputChange = (e) => {

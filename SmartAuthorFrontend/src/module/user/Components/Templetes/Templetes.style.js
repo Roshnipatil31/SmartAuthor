@@ -10,8 +10,11 @@ export const TempletesWapper = styled.div`
 export const TempletesHeader = styled.div`
     display: flex;
     justify-content: flex-start;
-    /* align-items: flex-start; */
     width: 100%;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
 `;
 
 export const TempletesTitle = styled.p`
@@ -27,6 +30,20 @@ export const TemplatesContainer = styled.div`
   gap: 20px;
   overflow-x: auto;
   padding: 10px 20px;
+
+  @media (max-width: 1200px) {
+    gap: 15px;
+  }
+  
+  @media (max-width: 990px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const TemplateCard = styled.div`
@@ -37,6 +54,14 @@ export const TemplateCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 576px) {
+    width: 180px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 160px;
+  }
 `;
 
 export const TemplateHeader = styled.div`
@@ -62,7 +87,6 @@ export const TemplateTitle = styled.h3`
 `;
 
 export const TemplateFooter = styled.div`
-  /* padding: 10px; */
   background-color: #fbc02d;
   text-align: center;
   font-size: 14px;
@@ -70,5 +94,8 @@ export const TemplateFooter = styled.div`
   font-family: ${theme.font.family};
   color: #fff;
   border-top: 1px solid #ddd;
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
-

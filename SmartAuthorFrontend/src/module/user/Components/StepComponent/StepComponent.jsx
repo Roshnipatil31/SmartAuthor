@@ -25,6 +25,11 @@ const ProgressContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 40px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px #0004;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: #fff;
 `;
 
 const Step = styled.div`

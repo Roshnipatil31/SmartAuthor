@@ -13,10 +13,15 @@ import {
   LoginNavbar,
 } from "./LoginPage.style";
 import bgimage from "../../assets/BgAuthImage.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiEdit3 } from "react-icons/fi";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/surveyform");
+  };
   return (
     <LoginPageWrapper>
       <LoginPageBgImage src={bgimage} alt="bgimage" />
@@ -25,7 +30,7 @@ const LoginPage = () => {
           <FiEdit3 className="edit-icon" />
           <LoginPageHeader> Smartauthor </LoginPageHeader>
         </LoginNavbar>
-        <Form>
+        <Form onSubmit={handleLogin}>
           <FormGroup>
             <Label> Email</Label>
             <Input type="email" placeholder="Enter your Email here" />

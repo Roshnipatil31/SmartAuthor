@@ -4,12 +4,12 @@ import theme from "../../../../theme/Themes";
 export const GenerateBooksWapper = styled.div`
     display: flex;
     flex-direction: column;
+    padding: 20px;
 `;
 
 export const GenerateBooksHeader = styled.div`
     display: flex;
     justify-content: flex-start;
-    /* align-items: flex-start; */
     width: 100%;
 `;
 
@@ -24,12 +24,21 @@ export const GenerateBooksTitle = styled.p`
 export const GeneratebooksContent = styled.div`
     display: flex;
     flex-direction: row;
+    gap: 20px;
+
+    @media (max-width: 1200px) {
+        gap: 15px;
+    }
+    
+    @media (max-width: 990px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const GenerateBook = styled.div`
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     margin-top: 20px;
     width: 100%;
@@ -46,12 +55,26 @@ export const GenerateIcon = styled.div`
     height: 100px;
     margin: 10px;
 
-
-    .add-icon{
+    .add-icon {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: ${theme.font.size.xxlarge};
+    }
+
+    @media (max-width: 768px) {
+        width: 80px;
+        height: 80px;
+    }
+
+    @media (max-width: 576px) {
+        width: 70px;
+        height: 70px;
+    }
+
+    @media (max-width: 480px) {
+        width: 60px;
+        height: 60px;
     }
 `;
 
@@ -71,6 +94,11 @@ export const GenerateIconTitle = styled.p`
     margin: 0 0 10px 0;
     width: 120px;
     text-align: center;
+
+    @media (max-width: 576px) {
+        font-size: ${theme.font.size.xsmall};
+        width: 100px;
+    }
 `;
 
 export const GenerateIconDescription = styled.p`
@@ -78,5 +106,8 @@ export const GenerateIconDescription = styled.p`
     font-size: ${theme.font.size.small};
     text-align: center;
     margin: 0;
-`;
 
+    @media (max-width: 576px) {
+        font-size: ${theme.font.size.xsmall};
+    }
+`;

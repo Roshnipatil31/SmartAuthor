@@ -9,7 +9,7 @@ export const Nav = styled.nav`
   padding: 15px 30px;
   background-color: ${theme.colors.white};
   position: relative;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
 `;
 
 export const Logo = styled.img`

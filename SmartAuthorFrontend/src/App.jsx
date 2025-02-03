@@ -12,6 +12,7 @@ import Library from "./module/user/Pages/Library/Library";
 import Step from "./module/user/Components/StepComponent/Step";
 import ContactUs from "./module/user/Pages/ContactUs/ContactUs";
 import Profile from "./module/user/Pages/Profile/Profile";
+import BlankPage from "./module/PreparedUser/Pages/BlankPage/BlankPage";
 
 // Layout for Dashboard & MyLibrary
 const DashboardLayout = ({ children }) => (
@@ -33,6 +34,7 @@ function App() {
 
         {/* Dashboard & MyLibrary using shared layout */}
         <Route path="/dashboard" element={<DashboardLayout><Dashboard /></DashboardLayout>} />
+        <Route path="/dashboard/blankPage" element={<DashboardLayout><BlankPage /></DashboardLayout>} />
         <Route path="/Step" element={<DashboardLayout><Step /></DashboardLayout>} />
         <Route path="/my-books" element={<DashboardLayout><MyBooks /></DashboardLayout>} />
         <Route path="/library" element={<DashboardLayout>< Library /></DashboardLayout>} />
