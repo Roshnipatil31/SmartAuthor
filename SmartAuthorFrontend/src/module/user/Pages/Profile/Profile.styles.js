@@ -6,6 +6,6 @@ export const ProfileContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   padding: 20px;
-  background: ${theme.colors.BackgroundGradient};
+  // background: ${theme.colors.BackgroundGradient};
   min-height: 100vh;
 `;

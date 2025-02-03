@@ -6,5 +6,5 @@ export const ContactUsContainer = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: ${theme.colors.BackgroundGradient};
+  // background: ${theme.colors.BackgroundGradient};
 `;

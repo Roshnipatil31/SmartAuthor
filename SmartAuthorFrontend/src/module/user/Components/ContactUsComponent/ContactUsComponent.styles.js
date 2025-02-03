@@ -8,7 +8,7 @@ export const ContactFormContainer = styled.div`
   width: 80%;
   background: ${theme.colors.white};
   border-radius: 10px;
-  box-shadow: 0px 4px 6px ${theme.colors.lightblur};
+  // box-shadow: 0px 4px 6px ${theme.colors.lightblur};
   overflow: hidden;
   padding: 20px;
   margin-top: 20px;
@@ -31,8 +31,8 @@ export const ImageWrapper = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  width: 100%;
-  height: auto;
+  // width: 100%;
+  // height: auto;
   border-radius: 10px;
 `;
 
@@ -40,7 +40,10 @@ export const FormWrapper = styled.form`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  // padding: 20px;
+  height: 100vh;
+  gap: 60px;
+  width: 10px;
 
   @media ${theme.media.md} {
     width: 100%;
@@ -48,14 +51,14 @@ export const FormWrapper = styled.form`
 `;
 
 export const FormTitle = styled.h2`
-  font-family: ${theme.font.Headerfamily};
+  // font-family: ${theme.font.Headerfamily};
   font-size: ${theme.font.size.xxxlarge};
   color: ${theme.colors.header};
   margin-bottom: 20px;
 `;
 
 export const InputField = styled.input`
-  width: 100%;
+  // width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid ${theme.colors.inputborder};
@@ -70,7 +73,7 @@ export const InputField = styled.input`
 `;
 
 export const TextArea = styled.textarea`
-  width: 100%;
+  // width: 100%;
   height: 100px;
   padding: 10px;
   border: 1px solid ${theme.colors.inputborder};
