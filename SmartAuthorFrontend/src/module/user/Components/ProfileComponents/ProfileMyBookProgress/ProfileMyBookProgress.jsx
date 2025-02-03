@@ -24,7 +24,7 @@ const ProfileMyBookProgress = () => {
           <span>83%</span>
         </ProgressBar>
       </BookInfo>
-      <ContinueButton>Continue Writing</ContinueButton>
+      <ContinueButton onClick={() => alert("Feature coming soon!")}>Continue Writing</ContinueButton>
     </BookProgressCard>
   );
 };

@@ -13,6 +13,7 @@ import Step from "./module/user/Components/StepComponent/Step";
 import ContactUs from "./module/user/Pages/ContactUs/ContactUs";
 import Profile from "./module/user/Pages/Profile/Profile";
 import BlankPage from "./module/PreparedUser/Pages/BlankPage/BlankPage";
+import AboutAuthor from "./module/user/Pages/AboutAuthor/AboutAuthor";
 
 // Layout for Dashboard & MyLibrary
 const DashboardLayout = ({ children }) => (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/library" element={<DashboardLayout>< Library /></DashboardLayout>} />
         <Route path="/contact-us" element={<DashboardLayout>< ContactUs /></DashboardLayout>} />
         <Route path="/profile" element={<DashboardLayout>< Profile /></DashboardLayout>} />
+        <Route path="/AboutAuthor" element={<DashboardLayout>< AboutAuthor /></DashboardLayout>} />
       </Routes>
     </BrowserRouter>
   );
