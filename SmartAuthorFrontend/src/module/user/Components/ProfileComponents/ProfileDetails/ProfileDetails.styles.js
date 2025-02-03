@@ -29,7 +29,7 @@ export const ProfileInfo = styled.div`
 
   h2 {
     font-size: ${theme.font.size.xxlarge};
-    font-family: ${theme.font.Headerfamily};
+    // font-family: ${theme.font.Headerfamily};
     color: ${theme.colors.header};
   }
 
@@ -45,24 +45,33 @@ export const StatContainer = styled.div`
   display: flex;
   gap: 15px;
   margin: 10px 0;
+  @media ${theme.media.md} {
+    flex-direction: column;
+    align-items: center;
+}
 `;
 
 export const StatBox = styled.div`
   background: ${theme.colors.white};
-  padding: 10px;
+  // padding: 10px;
   border-radius: 8px;
+  width: 150px;
+  height: 80px;
+  margin-bottom: 10px;
   text-align: center;
   box-shadow: 0px 2px 4px ${theme.colors.lightblur};
 `;
 
 export const StatNumber = styled.h3`
-  font-size: ${theme.font.size.large};
-  color: ${theme.colors.navy};
+  // font-size: ${theme.font.size.large};
+  // color: ${theme.colors.navy};
+  margin : 10px 0 ;
 `;
 
 export const StatLabel = styled.p`
   font-size: ${theme.font.size.small};
   color: ${theme.colors.gray};
+  margin-bottom: 50px;
 `;
 
 export const EditProfileButton = styled.button`
@@ -73,8 +82,13 @@ export const EditProfileButton = styled.button`
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  margin-top: -200px;
 
   &:hover {
     background-color: ${theme.colors.blue};
+  }
+
+  @media ${theme.media.md} {
+    margin-top: 0px;
   }
 `;

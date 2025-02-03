@@ -27,7 +27,7 @@ export const BookInfo = styled.div`
 
   h3 {
     font-size: ${theme.font.size.large};
-    font-family: ${theme.font.Headerfamily};
+    // font-family: ${theme.font.Headerfamily};
     color: ${theme.colors.header};
   }
 
