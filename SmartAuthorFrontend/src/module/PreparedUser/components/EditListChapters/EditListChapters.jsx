@@ -13,6 +13,7 @@ import {
   IconWrapper 
 } from "./EditListChapters.style";
 import { FiChevronDown, FiSearch, FiBook, FiFileText } from "react-icons/fi";
+import { HiOutlinePaintBrush } from "react-icons/hi2";
 
 const EditListChapters = () => {
   return (
@@ -21,13 +22,14 @@ const EditListChapters = () => {
       
       <ButtonGroup>
         <StyledButton>+ Add new</StyledButton>
-        <StyledButton>📎 Boards</StyledButton>
+        <StyledButton><HiOutlinePaintBrush /> Boards</StyledButton>
       </ButtonGroup>
 
       <EditCoverButton>Edit Cover page</EditCoverButton>
 
       <Section>
         <SectionTitle>
+        <FiSearch />
           <IconWrapper><FiChevronDown /></IconWrapper>
           <FiBook /> Manuscript
           <IconWrapper><FiSearch /></IconWrapper>

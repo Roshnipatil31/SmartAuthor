@@ -15,7 +15,6 @@ export const Nav = styled.nav`
 export const Logo = styled.img`
   height: 50px;
   width: auto;
-  cursor: pointer;
 `;
 
 export const NavContainer = styled.div`

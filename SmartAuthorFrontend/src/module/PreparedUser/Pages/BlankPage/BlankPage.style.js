@@ -8,10 +8,10 @@ export const BlankPageWrapper = styled.div`
 
   .editListChapters{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    margin-top: -20px;
     gap: 10px;
     width: 100%;
-    height: 100%;
     background: ${theme.colors.BackgroundGradient};
   }
 `;

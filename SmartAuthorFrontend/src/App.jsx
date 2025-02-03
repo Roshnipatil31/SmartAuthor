@@ -14,6 +14,7 @@ import ContactUs from "./module/user/Pages/ContactUs/ContactUs";
 import Profile from "./module/user/Pages/Profile/Profile";
 import BlankPage from "./module/PreparedUser/Pages/BlankPage/BlankPage";
 import AboutAuthor from "./module/user/Pages/AboutAuthor/AboutAuthor";
+import SemiPrapared from "./module/user/Pages/SemiPrepared/SemiPrapared";
 
 // Layout for Dashboard & MyLibrary
 const DashboardLayout = ({ children }) => (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/contact-us" element={<DashboardLayout>< ContactUs /></DashboardLayout>} />
         <Route path="/profile" element={<DashboardLayout>< Profile /></DashboardLayout>} />
         <Route path="/AboutAuthor" element={<DashboardLayout>< AboutAuthor /></DashboardLayout>} />
+        <Route path="/semipreparedPage" element={<DashboardLayout>< SemiPrapared /></DashboardLayout>} />
       </Routes>
     </BrowserRouter>
   );

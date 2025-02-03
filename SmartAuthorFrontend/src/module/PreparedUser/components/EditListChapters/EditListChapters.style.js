@@ -3,10 +3,12 @@ import theme from "../../../../theme/Themes";
 
 export const SidebarContainer = styled.div`
   width: 250px;
-  height: 80vh;
+  height: 85vh;
   padding: 15px;
+  margin: 0px 0px 10px 10px;
   background-color: ${theme.colors.white};
   border-right: 1px solid ${theme.colors.inputborder};
+  /* position: relative; */
 `;
 
 export const UserName = styled.h3`
@@ -18,6 +20,7 @@ export const ButtonGroup = styled.div`
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
+  justify-content: space-around;
 `;
 
 export const StyledButton = styled.button`
@@ -25,11 +28,11 @@ export const StyledButton = styled.button`
   border: 1px dashed ${theme.colors.inputborder};
   background: transparent;
   cursor: pointer;
-  font-size: 14px;
+  font-size: ${theme.font.size.small};
   border-radius: 5px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 `;
 
 export const EditCoverButton = styled.button`
@@ -55,12 +58,14 @@ export const SectionTitle = styled.div`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  margin-bottom: 20px;
 `;
 
 export const Item = styled.div`
   font-size: ${theme.font.size.small};
-  margin: 5px 0;
+  margin: 20px 0;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 5px;
 `;
@@ -69,14 +74,17 @@ export const TagContainer = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 15px;
+  position: absolute;
+  bottom: 0px;
 `;
 
-export const Tag = styled.div`
+export const Tag = styled.button`
   background-color:${theme.colors.navy};
   color: ${theme.colors.white};
+  border: none;
   padding: 5px 10px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 10px;
 `;
 
 export const IconWrapper = styled.span`

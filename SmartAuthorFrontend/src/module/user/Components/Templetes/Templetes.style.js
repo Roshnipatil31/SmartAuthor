@@ -29,7 +29,7 @@ export const TemplatesContainer = styled.div`
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 10px 20px;
+  padding: 10px;
 
   @media (max-width: 1200px) {
     gap: 15px;
@@ -54,6 +54,7 @@ export const TemplateCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
 
   @media (max-width: 576px) {
     width: 180px;
@@ -66,7 +67,7 @@ export const TemplateCard = styled.div`
 
 export const TemplateHeader = styled.div`
   padding: 10px;
-  font-size: 18px;
+  font-size: 10px;
   font-weight: bold;
   text-align: center;
 `;
@@ -74,7 +75,7 @@ export const TemplateHeader = styled.div`
 export const TemplateContent = styled.div`
   flex: 1;
   padding: 10px;
-  font-size: 12px;
+  font-size: 8px;
   color: #555;
 `;
 
