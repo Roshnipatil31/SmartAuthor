@@ -15,15 +15,20 @@ import { TbEdit } from "react-icons/tb";
 import Aiplus from "../../../../assets/unprepared.svg";
 import { useNavigate } from "react-router-dom";
 import SemiPrapared from "../../Pages/SemiPrepared/SemiPrapared"; // Import the modal component
+import UnPreparedUsers from "../../Pages/UnPreparedUsers/UnPreparedUsers";
 
 const GenerateBooks = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State to handle modal visibility
+  const [isModalOpens, setIsModalOpens] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = (route) => {
     if (route === "/semipreparedPage") {
       setIsModalOpen(true); // Open modal when second item is clicked
-    } else {
+    } else if (route === "/UnPreparedUsers") {
+      setIsModalOpens(true); // Open modal when second item is clicked
+    }
+    else {
       navigate(route);
     }
   };
@@ -77,6 +82,17 @@ const GenerateBooks = () => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <SemiPrapared />
             <button className="close-btn" onClick={() => setIsModalOpen(false)}>
+              X
+            </button>
+          </div>
+        </div>
+      )}
+
+      {isModalOpens && (
+        <div className="modal-overlays" onClick={() => setIsModalOpens(false)}>
+          <div className="modal-contents" onClick={(e) => e.stopPropagation()}>
+            <UnPreparedUsers />
+            <button className="close-btn" onClick={() => setIsModalOpens(false)}>
               X
             </button>
           </div>

@@ -12,6 +12,7 @@ export const BlankPageWrapper = styled.div`
     margin-top: -20px;
     gap: 10px;
     width: 100%;
+    height: 100vh;
     background: ${theme.colors.BackgroundGradient};
   }
 `;

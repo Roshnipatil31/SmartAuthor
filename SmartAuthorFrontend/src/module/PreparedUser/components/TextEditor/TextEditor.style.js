@@ -5,6 +5,13 @@ export const TextEditorWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  .editable{
+    height: 400px;
+    background: ${theme.colors.white};
+    outline: none;
+    padding: 20px;
+  }
 `;
 
 export const TextEditComponents = styled.div`
@@ -45,3 +52,11 @@ export const TextFontSize = styled.div`
     border-radius: 5px;
   }
 `;
+
+export const TextIndex = styled.div`
+  padding: 5px 20px;
+
+  .bold {
+    background: ${theme.colors.transparnt};
+    }
+`
