@@ -30,8 +30,9 @@ export const GenerateBooksWapper = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
-  background: red;
-  color: white;
+  font-size: ${theme.font.size.xlarge};
+  background: ${theme.colors.transparnt};
+  color: ${theme.colors.inputborder};
   border: none;
   padding: 5px 10px;
   cursor: pointer;

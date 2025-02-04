@@ -77,7 +77,7 @@ const GenerateBooks = () => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <SemiPrapared />
             <button className="close-btn" onClick={() => setIsModalOpen(false)}>
-              Close
+              X
             </button>
           </div>
         </div>

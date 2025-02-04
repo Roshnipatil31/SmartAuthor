@@ -12,8 +12,8 @@ export const DashboardGif = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 300px;
-  height: 100vh;
+  /* width: 300px; */
+  /* height: 100vh; */
   background-color: ${theme.colors.navy};
 `;
 
@@ -25,6 +25,6 @@ export const BookGif = styled.img`
 export const DashboardContent = styled.div`
   display: flex;
   flex-direction: column;
-
-  width: 70%;
+justify-content: flex-end;
+  width: 75%;
 `;

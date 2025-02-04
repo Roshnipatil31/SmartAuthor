@@ -8,8 +8,8 @@ const SemiPrepared = () => {
         characterName: "",
         numberOfCharacters: "",
         numberOfChapters: "",
-        storyType: "Adventure",
-        genre: "Adventure",
+        storyType: "",
+        genre: "",
         description: ""
     });
 
@@ -59,28 +59,25 @@ const SemiPrepared = () => {
                 </FormGroup>
                 <FormGroup>
                     <label htmlFor="storyType">Select Story Type</label>
-                    <select name="storyType" value={formData.storyType} onChange={handleChange}>
-                        <option value="Adventure">Adventure</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Fantasy">Fantasy</option>
-                        <option value="Horror">Horror</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Thriller">Thriller</option>
-                    </select>
+                    <input 
+                        type="text" 
+                        name="storyType" 
+                        placeholder="Write Here" 
+                        value={formData.storyType} 
+                        onChange={handleChange} 
+                    />
                 </FormGroup>
                 <FormGroup>
                     <label htmlFor="genre">Select Genre</label>
-                    <select name="genre" value={formData.genre} onChange={handleChange}>
-                        <option value="Adventure">Adventure</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Fantasy">Fantasy</option>
-                        <option value="Horror">Horror</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Thriller">Thriller</option>
-                    </select>
+                    <input 
+                        type="text" 
+                        name="genre" 
+                        placeholder="Write Here" 
+                        value={formData.genre} 
+                        onChange={handleChange} 
+                    />
                 </FormGroup>
                 <FormGroup>
-                    <label htmlFor="description">Description</label>
                     <textarea 
                         name="description" 
                         placeholder="Description" 

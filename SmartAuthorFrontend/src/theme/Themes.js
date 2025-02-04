@@ -16,7 +16,12 @@ const theme = {
     blue1: "#6652F726",
     transparnt: "transparent",
     Green: "#26A541",
+    inputColor: "#A5A5A5",
+    textareaColor: "#85858699",
+    textareabg: "#A6A6A60D",
+    textareaborder: "#D1D1D133",
     BackgroundGradient: "linear-gradient(to bottom, #265073 0%, #F9F7EE 100%)", 
+    buttonGradient: "linear-gradient(90deg, rgba(38,80,115,1) 0%, rgba(72,151,217,1) 35%);"
   },
   font: {
     size: {
@@ -31,6 +36,7 @@ const theme = {
     Headerfamily: "'Post No Bills Colombo extrabold', sans-serif",
     family: "'poppins', sans-serif",
     interfamily: "'Inter', sans-serif",
+    Geologica: "'Geologica'",
   },
   breakpoint: {
     xxxl: "1600px",
