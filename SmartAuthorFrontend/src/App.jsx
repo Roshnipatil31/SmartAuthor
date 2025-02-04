@@ -15,6 +15,7 @@ import Profile from "./module/user/Pages/Profile/Profile";
 import BlankPage from "./module/PreparedUser/Pages/BlankPage/BlankPage";
 import AboutAuthor from "./module/user/Pages/AboutAuthor/AboutAuthor";
 import SemiPrapared from "./module/user/Pages/SemiPrepared/SemiPrapared";
+import UnPreparedUsers from "./module/user/Pages/UnPreparedUsers/UnPreparedUsers";
 
 // Layout for Dashboard & MyLibrary
 const DashboardLayout = ({ children }) => (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/profile" element={<DashboardLayout>< Profile /></DashboardLayout>} />
         <Route path="/AboutAuthor" element={<DashboardLayout>< AboutAuthor /></DashboardLayout>} />
         <Route path="/semipreparedPage" element={<DashboardLayout>< SemiPrapared /></DashboardLayout>} />
+        <Route path="/UnPreparedUsers" element={<DashboardLayout>< UnPreparedUsers /></DashboardLayout>} />
       </Routes>
     </BrowserRouter>
   );
