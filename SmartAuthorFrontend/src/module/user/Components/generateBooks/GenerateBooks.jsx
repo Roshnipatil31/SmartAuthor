@@ -56,7 +56,7 @@ const GenerateBooks = () => {
             title: "Generate Your Book in 4 clicks",
             description: "AI-Generated Book Creation",
             icon: <img src={Aiplus} alt="Aiplus" className="add-icon" />,
-            route: "/unpreparedPage",
+            route: "/UnPreparedUsers",
           },
         ].map((item) => (
           <GenerateBook key={item.id}>
