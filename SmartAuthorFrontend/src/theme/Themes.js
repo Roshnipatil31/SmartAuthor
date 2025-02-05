@@ -1,4 +1,3 @@
-import { blue } from "@mui/material/colors";
 import { TbBackground } from "react-icons/tb";
 
 const theme = {
