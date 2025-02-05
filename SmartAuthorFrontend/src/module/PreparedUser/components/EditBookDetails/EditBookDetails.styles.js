@@ -15,7 +15,7 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  background: ${theme.colors.white};
+  background: ${theme.colors.PreviewBg};
   padding: 30px;
   border-radius: 12px;
   max-width: 850px;
@@ -66,7 +66,7 @@ export const PreviewSection = styled.div`
 
 export const BookCover = styled.div`
   img {
-    width: 200px;
+    width: 230px;
     height: 260px;
     border-radius: 8px;
   }
