@@ -8,10 +8,9 @@ export const ContactFormContainer = styled.div`
   width: 80%;
   background: ${theme.colors.white};
   border-radius: 10px;
-  // box-shadow: 0px 4px 6px ${theme.colors.lightblur};
   overflow: hidden;
   padding: 20px;
-  margin-top: 20px;
+  // margin-top: 20px;
 
   @media ${theme.media.md} {
     flex-direction: column;
@@ -31,19 +30,19 @@ export const ImageWrapper = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  // width: 100%;
-  // height: auto;
-  border-radius: 10px;
+  // border-radius: 10px;
+  height: 380px;
+  width: 300px;
+  margin-top: 60px;  
 `;
 
 export const FormWrapper = styled.form`
   flex: 1;
   display: flex;
   flex-direction: column;
-  // padding: 20px;
-  height: 100vh;
-  gap: 60px;
-  width: 10px;
+  gap: 20px; /* Reduced gap for better spacing */
+  width: 100%;
+  max-width: 400px;
 
   @media ${theme.media.md} {
     width: 100%;
@@ -51,16 +50,13 @@ export const FormWrapper = styled.form`
 `;
 
 export const FormTitle = styled.h2`
-  // font-family: ${theme.font.Headerfamily};
   font-size: ${theme.font.size.xxxlarge};
   color: ${theme.colors.header};
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 export const InputField = styled.input`
-  // width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
   border: 1px solid ${theme.colors.inputborder};
   border-radius: 5px;
   font-size: ${theme.font.size.medium};
@@ -73,7 +69,6 @@ export const InputField = styled.input`
 `;
 
 export const TextArea = styled.textarea`
-  // width: 100%;
   height: 100px;
   padding: 10px;
   border: 1px solid ${theme.colors.inputborder};
@@ -101,4 +96,11 @@ export const SubmitButton = styled.button`
   &:hover {
     background-color: ${theme.colors.blue2};
   }
+`;
+
+export const ErrorText = styled.span`
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+  display: block;
 `;
