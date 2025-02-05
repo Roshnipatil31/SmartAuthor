@@ -11,6 +11,8 @@ export const TextEditorWrapper = styled.div`
     background: ${theme.colors.white};
     outline: none;
     padding: 20px;
+    overflow-y: scroll;
+    scrollbar-width: none;
   }
 `;
 
