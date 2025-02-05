@@ -42,7 +42,7 @@ const EditBookDetails = ({ isOpen, onClose }) => {
             <BookInfo>
               <h2>Book Name</h2>
               <p>Subtitle</p>
-              <p><strong>Author Name</strong></p>
+              <h4><strong>Author Name</strong></h4>
             </BookInfo>
           </PreviewSection>
 
@@ -58,7 +58,7 @@ const EditBookDetails = ({ isOpen, onClose }) => {
               ))}
               <ChapterCard className="more-chapters">
                 <h3>More 24</h3>
-                <p>Chapter</p>
+                <h3>Chapter</h3>
               </ChapterCard>
             </ChapterList>
 

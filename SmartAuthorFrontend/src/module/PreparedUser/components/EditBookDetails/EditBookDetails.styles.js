@@ -79,7 +79,7 @@ export const BookInfo = styled.div`
   h2 {
     font-size: ${theme.font.size.xlarge};
     font-weight: bold;
-    color: ${theme.colors.header};
+    color: ${theme.colors.black};
   }
   p {
     margin: 5px 0;
@@ -120,7 +120,7 @@ export const ChapterCard = styled.div`
   h3 {
     font-size: ${theme.font.size.medium};
     font-weight: bold;
-    color: ${theme.colors.header};
+    color: ${theme.colors.black};
   }
   p {
     font-size: ${theme.font.size.small};
