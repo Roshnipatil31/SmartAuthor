@@ -1,3 +1,4 @@
+import { blue } from "@mui/material/colors";
 import { TbBackground } from "react-icons/tb";
 
 const theme = {
@@ -5,7 +6,9 @@ const theme = {
     navy: "#265073",
     blue: "#6652F7",
     blue2: "#4897D9",
+    blue3: "#4897D933",
     gray: "#747474",
+    gray2: "#BABABA",
     header: "#595959",
     iconColor: "#4F4F4F", 
     inputborder: "#DBDBDB",
@@ -21,6 +24,7 @@ const theme = {
     textareaColor: "#85858699",
     textareabg: "#A6A6A60D",
     textareaborder: "#D1D1D133",
+    pricingBg: "#DAEAF7",
     BackgroundGradient: "linear-gradient(to bottom, #265073 0%, #F9F7EE 100%)", 
     buttonGradient: "linear-gradient(90deg, rgba(38,80,115,1) 0%, rgba(72,151,217,1) 35%);"
   },
