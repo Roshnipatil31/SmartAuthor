@@ -16,6 +16,7 @@ import BlankPage from "./module/PreparedUser/Pages/BlankPage/BlankPage";
 import AboutAuthor from "./module/user/Pages/AboutAuthor/AboutAuthor";
 import SemiPrapared from "./module/user/Pages/SemiPrepared/SemiPrapared";
 import UnPreparedUsers from "./module/user/Pages/UnPreparedUsers/UnPreparedUsers";
+import EditBookDetails from "./module/PreparedUser/components/EditBookDetails/EditBookDetails";
 
 // Layout for Dashboard & MyLibrary
 const DashboardLayout = ({ children }) => (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/AboutAuthor" element={<DashboardLayout>< AboutAuthor /></DashboardLayout>} />
         <Route path="/semipreparedPage" element={<DashboardLayout>< SemiPrapared /></DashboardLayout>} />
         <Route path="/UnPreparedUsers" element={<DashboardLayout>< UnPreparedUsers /></DashboardLayout>} />
+        <Route path="/edit-book" element={<EditBookDetails />} />
       </Routes>
     </BrowserRouter>
   );
