@@ -6,7 +6,7 @@ export const TextEditorWrapper = styled.div`
   flex-direction: column;
   width: 100%;
 
-  .editable{
+  .editable {
     height: 400px;
     background: ${theme.colors.white};
     outline: none;
@@ -47,7 +47,7 @@ export const TextFontSize = styled.div`
     border: none;
     cursor: pointer;
   }
-  .fontSize{
+  .fontSize {
     border: 1px solid ${theme.colors.inputborder};
     border-radius: 5px;
   }
@@ -56,7 +56,11 @@ export const TextFontSize = styled.div`
 export const TextIndex = styled.div`
   padding: 5px 20px;
 
-  .bold {
-    background: ${theme.colors.transparnt};
-    }
-`
+  .SlateButton {
+    background: ${(props) =>
+      props.active ? theme.colors.blue : theme.colors.white};
+    border: none;
+    cursor: pointer;
+    font-size: ${theme.font.size.large};
+  }
+`;
