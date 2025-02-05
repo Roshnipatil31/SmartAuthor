@@ -39,7 +39,12 @@ export const FormGroup = styled.div`
     font-weight: bold;
     outline: none;
     padding: 5px;
+
+
   }
+        input::placeholder {
+      color: ${theme.colors.inputColor};
+    }
 
   /* Styles for genre selection */
   .genre-container {
@@ -50,15 +55,14 @@ export const FormGroup = styled.div`
     .genre {
       padding: 5px 10px;
       border-radius: 20px;
-      background: ${theme.colors.blue2};
-      color: ${theme.colors.white};
-      border: none;
+      background: ${theme.colors.blue3};
+      color: ${theme.colors.navy};
+      border: 1px solid ${theme.colors.navy};
+    //   border: none;
       cursor: pointer;
       font-size: ${theme.font.size.small};
 
-      &:hover {
-        background: ${theme.colors.blue};
-      }
+   
     }
 
     .add-genre {
@@ -68,18 +72,20 @@ export const FormGroup = styled.div`
       border-radius: 20px;
       padding: 5px 10px;
       background: ${theme.colors.transparent};
+      width: 42%;
 
       input {
         border: none;
         outline: none;
         background: transparent;
-        color: ${theme.colors.black};
+        width: 100%;
+        color: ${theme.colors.inputColor};
         font-size: ${theme.font.size.small};
       }
 
       button {
         border: none;
-        background: ${theme.colors.blue};
+        background: ${theme.colors.gray2};
         color: ${theme.colors.white};
         border-radius: 50%;
         padding: 5px 10px;
@@ -102,7 +108,4 @@ export const SemiButton = styled.button`
   margin-top: 15px;
   cursor: pointer;
 
-  &:hover {
-    background: ${theme.colors.blue};
-  }
 `;

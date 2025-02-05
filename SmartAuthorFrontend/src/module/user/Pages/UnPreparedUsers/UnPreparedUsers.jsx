@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { SemiPreparedWrapper, FormGroup, SemiButton } from "./UnPreparedUsers.styles";
+import {
+  SemiPreparedWrapper,
+  FormGroup,
+  SemiButton,
+} from "./UnPreparedUsers.styles";
 
 const UnPreparedUsers = () => {
   const [userData, setUserData] = useState({
     name: "",
     age: "",
-    interest: "Cooking",
+    interest: "",
     characters: "",
     chapters: "",
     places: "",
@@ -44,17 +48,35 @@ const UnPreparedUsers = () => {
       <form onSubmit={(e) => e.preventDefault()}>
         <FormGroup>
           <label>Your Name?</label>
-          <input type="text" name="name" placeholder="Type here" value={userData.name} onChange={handleInputChange} />
+          <input
+            type="text"
+            name="name"
+            placeholder="Type here"
+            value={userData.name}
+            onChange={handleInputChange}
+          />
         </FormGroup>
 
         <FormGroup>
           <label>Age?</label>
-          <input type="number" name="age" placeholder="Type here" value={userData.age} onChange={handleInputChange} />
+          <input
+            type="number"
+            name="age"
+            placeholder="Type here"
+            value={userData.age}
+            onChange={handleInputChange}
+          />
         </FormGroup>
 
         <FormGroup>
           <label>Interest?</label>
-          <input type="text" value={userData.interest} disabled />
+          <input
+            type="text"
+            name="interest"
+            value={userData.interest}
+            placeholder="Cooking"
+            onChange={handleInputChange}
+          />
         </FormGroup>
 
         <FormGroup>
@@ -94,18 +116,32 @@ const UnPreparedUsers = () => {
           <label>Select Genre</label>
           <div className="genre-container">
             {selectedGenres.map((genre) => (
-              <button key={genre} type="button" className="genre" onClick={() => handleRemoveGenre(genre)}>
+              <button
+                key={genre}
+                type="button"
+                className="genre"
+                onClick={() => handleRemoveGenre(genre)}
+              >
                 {genre} ✕
               </button>
             ))}
             <div className="add-genre">
-              <input type="text" placeholder="Enter Genre" value={newGenre} onChange={(e) => setNewGenre(e.target.value)} />
-              <button type="button" onClick={handleAddGenre}>+</button>
+              <input
+                type="text"
+                placeholder="Enter Genre"
+                value={newGenre}
+                onChange={(e) => setNewGenre(e.target.value)}
+              />
+              <button type="button" onClick={handleAddGenre}>
+                +
+              </button>
             </div>
           </div>
         </FormGroup>
 
-        <SemiButton type="button" onClick={handleGenerate}>Generate</SemiButton>
+        <SemiButton type="button" onClick={handleGenerate}>
+          Generate
+        </SemiButton>
       </form>
     </SemiPreparedWrapper>
   );
