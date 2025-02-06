@@ -15,6 +15,10 @@ export const DashboardGif = styled.div`
   /* width: 300px; */
   /* height: 100vh; */
   background-color: ${theme.colors.navy};
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const BookGif = styled.img`
@@ -27,4 +31,8 @@ export const DashboardContent = styled.div`
   flex-direction: column;
 /* justify-content: flex-end; */
   width: 75%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;

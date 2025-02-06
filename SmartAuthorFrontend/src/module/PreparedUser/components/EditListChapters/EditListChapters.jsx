@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { 
   SidebarContainer, 
   UserName, 
@@ -14,8 +14,19 @@ import {
 } from "./EditListChapters.style";
 import { FiChevronDown, FiSearch, FiBook, FiFileText } from "react-icons/fi";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
+import BrainstormingTag from "../Brainstorming/BrainstormingTag"; // Import Feedback component
 
 const EditListChapters = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <SidebarContainer>
       <UserName>Sneha Gadkar</UserName>
@@ -29,7 +40,7 @@ const EditListChapters = () => {
 
       <Section>
         <SectionTitle>
-        <FiSearch />
+          <FiSearch />
           <IconWrapper><FiChevronDown /></IconWrapper>
           <FiBook /> Manuscript
           <IconWrapper><FiSearch /></IconWrapper>
@@ -47,9 +58,20 @@ const EditListChapters = () => {
       </Section>
 
       <TagContainer>
-        <Tag>Brainstorming</Tag>
+        <Tag onClick={handleOpenModal}>Brainstorming</Tag>
         <Tag>Psychiatrist-Inspired</Tag>
       </TagContainer>
+
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <BrainstormingTag />
+            <button className="close-button" onClick={handleCloseModal}>
+              x
+            </button>
+          </div>
+        </div>
+      )}
     </SidebarContainer>
   );
 };
