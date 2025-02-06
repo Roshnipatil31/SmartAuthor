@@ -167,7 +167,7 @@ export const FunFactButton = styled.button`
   border-bottom-left-radius:2px;
   font-size: ${theme.font.size.medium};
   padding: 10px 20px;
-  cursor: pointer;
+  /* cursor: pointer; */
   font-weight: bold;
   border: 1px solid ${theme.colors.blue};
   box-shadow: 1px 2px 10px ${theme.colors.blue};

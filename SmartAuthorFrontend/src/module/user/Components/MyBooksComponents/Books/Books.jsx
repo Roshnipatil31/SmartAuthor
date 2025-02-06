@@ -5,7 +5,6 @@ import { BooksContainer, BookImage } from "./Books.styles";
 import book1 from "../../../../../assets/Book1.jpg";
 import book2 from "../../../../../assets/Book2.jpg";
 import book3 from "../../../../../assets/Book3.jpg";
-import book4 from "../../../../../assets/Book4.jpg";// Placeholder for new books
 
 const Books = () => {
   const [books, setBooks] = useState([
@@ -14,14 +13,14 @@ const Books = () => {
     { id: 3, title: "Made in Heaven", src: book3 },
   ]);
 
-  const addNewBook = () => {
-    const newBook = {
-      id: books.length + 1,
-      title: `New Book ${books.length + 1}`,
-      src: book4, // Using book4 as a placeholder
-    };
-    setBooks([...books, newBook]);
-  };
+  // const addNewBook = () => {
+  //   const newBook = {
+  //     id: books.length + 1,
+  //     title: `New Book ${books.length + 1}`,
+  //     src: book4, // Using book4 as a placeholder
+  //   };
+  //   setBooks([...books, newBook]);
+  // };
 
   return (
     <div>
