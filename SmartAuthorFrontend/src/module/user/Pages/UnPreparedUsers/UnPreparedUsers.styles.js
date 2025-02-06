@@ -4,18 +4,19 @@ import theme from "../../../../theme/Themes";
 export const SemiPreparedWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  // width: 100%;
   max-width: 400px;
-  margin-right: 10px;
+  // margin-right: 10px;
   border-radius: 40px;
-  margin: auto;
+  // margin: auto;
   height: auto;
+  // padding: 20px;
 
   form {
     display: flex;
     flex-direction: column;
-    // gap: 20px;
-    // padding: 20px;
+    gap: 20px;
+    padding: 20px;
     // background: ${theme.colors.white};
     // justify-content: space-between;
   }
@@ -29,9 +30,8 @@ export const FormGroup = styled.div`
   label {
     font-size: ${theme.font.size.medium};
     font-family: ${theme.font.Geologica};
-
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;  
   }
 
   input {
@@ -43,7 +43,7 @@ export const FormGroup = styled.div`
     color: ${theme.colors.inputColor};
     font-weight: bold;
     outline: none;
-    padding: 5px;
+    // padding: 5px;
   }
 
   input::placeholder {
@@ -62,7 +62,7 @@ export const FormGroup = styled.div`
   .genre-container {
     display: flex;
     flex-wrap: wrap;
-    // gap: 10px;
+    gap: 10px;
 
     .genre {
       padding: 5px 10px;
