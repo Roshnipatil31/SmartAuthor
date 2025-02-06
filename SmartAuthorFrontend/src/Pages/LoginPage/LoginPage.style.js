@@ -15,10 +15,6 @@ export const LoginPageBgImage = styled.img`
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    @media ${theme.media.xs} {
-        display: none;
-    }
 `;
 
 export const Logincontainer = styled.div`
@@ -36,8 +32,12 @@ export const Logincontainer = styled.div`
     border-radius: 5px;
     z-index: 1;
 
-    @media ${theme.media.xs} {
+    @media ${theme.media.sm} {
     width: 300px;
+  }
+
+    @media ${theme.media.xs} {
+    width: 250px;
   }
 `;  
 

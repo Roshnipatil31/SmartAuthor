@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../../../../theme/Themes"; // Importing the theme file
+import theme from "../../../../theme/Themes";
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -15,7 +15,7 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  background: ${theme.colors.white};
+  background: ${theme.colors.previewBg};
   padding: 30px;
   border-radius: 12px;
   max-width: 850px;
@@ -45,8 +45,8 @@ export const ContentWrapper = styled.div`
   display: flex;
   gap: 30px;
   margin-left: 20px;
-//   align-items: flex-start;
-//   justify-content: space-between;
+  //   align-items: flex-start;
+  //   justify-content: space-between;
 
   @media ${theme.media.md} {
     flex-direction: column;
@@ -59,10 +59,9 @@ export const ContentWrapper = styled.div`
 export const PreviewSection = styled.div`
   display: flex;
   flex-direction: column;
-//   align-items: center;
-//   text-align: center;
+  //   align-items: center;
+  //   text-align: center;
 `;
-
 
 export const BookCover = styled.div`
   img {
@@ -74,7 +73,7 @@ export const BookCover = styled.div`
 
 export const BookInfo = styled.div`
   margin-top: 10px;
-//   text-align: center;
+  //   text-align: center;
 
   h2 {
     font-size: ${theme.font.size.xlarge};
@@ -115,7 +114,7 @@ export const ChapterCard = styled.div`
   border-radius: 8px;
   width: 100px;
   box-shadow: 0 2px 6px ${theme.colors.lightblur};
-//   text-align: center;
+  //   text-align: center;
 
   h3 {
     font-size: ${theme.font.size.medium};
@@ -140,7 +139,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   gap: 12px;
   margin-top: 20px;
-  justify-content: center;  
+  justify-content: center;
 `;
 
 export const ExportButton = styled.button`
@@ -163,7 +162,6 @@ export const EditButton = styled.button`
   cursor: pointer;
   font-size: ${theme.font.size.small};
   width: 140px;
-
 `;
 
 export const PreviewTitle = styled.h1`
@@ -174,4 +172,3 @@ export const PreviewTitle = styled.h1`
   font-family: ${theme.font.family};
   margin-bottom: 20px;
 `;
-

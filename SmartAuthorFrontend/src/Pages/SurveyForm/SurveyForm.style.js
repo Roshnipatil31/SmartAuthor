@@ -30,6 +30,10 @@ export const SurveyFormContainer = styled.div`
   color: white;
   text-align: center;
   position: relative;
+
+  @media ${theme.media.sm} {
+    width: 80%;
+  }
 `;
 
 // Navbar

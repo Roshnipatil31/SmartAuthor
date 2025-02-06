@@ -33,6 +33,14 @@ export const SignUpcontainer = styled.div`
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
+
+    @media ${theme.media.sm} {
+        width: 300px;
+    }
+
+    @media ${theme.media.xs} {
+        width: 250px;
+    }   
 `;
 
 export const SignUpHeader = styled.h1`
