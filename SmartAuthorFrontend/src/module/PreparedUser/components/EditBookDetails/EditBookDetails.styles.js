@@ -65,7 +65,7 @@ export const PreviewSection = styled.div`
 
 export const BookCover = styled.div`
   img {
-    width: 200px;
+    width: 230px;
     height: 260px;
     border-radius: 8px;
   }
