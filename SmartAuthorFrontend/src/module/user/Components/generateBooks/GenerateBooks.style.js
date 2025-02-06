@@ -29,14 +29,22 @@ export const GenerateBooksWapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 20px 0px;
-  }
 
+    @media (max-width: 576px) {
+      height: 200vh;
+      align-items: flex-start;
+    }
+  }
   .modal-content {
     background: white;
     padding: 20px;
     border-radius: 10px;
     min-width: 400px;
     position: relative;
+
+    @media (max-width: 576px) {
+      min-width: 300px;
+    }
   }
 
   .modal-contents {
@@ -45,6 +53,11 @@ export const GenerateBooksWapper = styled.div`
     border-radius: 10px;
     min-width: 400px;
     position: relative;
+
+    @media (max-width: 576px) {
+      min-width: 300px;
+      height: 105vh;
+    }
   }
 
   .close-btn {
@@ -83,7 +96,7 @@ export const GeneratebooksContent = styled.div`
     gap: 15px;
   }
 
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }

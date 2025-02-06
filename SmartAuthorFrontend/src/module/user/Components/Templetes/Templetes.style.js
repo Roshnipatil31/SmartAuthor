@@ -33,20 +33,6 @@ export const TemplatesContainer = styled.div`
   width: 95%;
   scrollbar-width: thin; /* Thin is the smallest available option */
   scrollbar-color: #d9d9d9 transparent; /* Thumb color & track color */
-
-  @media (max-width: 1200px) {
-    gap: 15px;
-  }
-
-  @media (max-width: 990px) {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 
@@ -82,7 +68,7 @@ export const TemplateContent = styled.div`
   flex: 1;
   padding: 10px;
   font-size: 12px;
-  width: 200px;
+  width: 150px;
   color: #555;
 `;
 
