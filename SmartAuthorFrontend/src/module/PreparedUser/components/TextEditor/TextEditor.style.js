@@ -7,12 +7,14 @@ export const TextEditorWrapper = styled.div`
   width: 100%;
 
   .editable {
-    height: 400px;
+    height: 75vh;
     background: ${theme.colors.white};
     outline: none;
-    padding: 20px;
+    padding: 0 20px;
     overflow-y: scroll;
     scrollbar-width: none;
+    position: relative;
+    z-index: 0;
   }
 `;
 
@@ -26,24 +28,32 @@ export const TextEditComponents = styled.div`
 export const TextSize = styled.div`
   padding: 5px 20px;
   border-right: 1px solid ${theme.colors.inputborder};
+  text-align: center;
+  width: 20%;
   select {
     padding: 5px;
     border: none;
+    font-size: ${theme.font.size.small};
   }
 `;
 
 export const TextFamily = styled.div`
   padding: 5px 20px;
   border-right: 1px solid ${theme.colors.inputborder};
+  text-align: center;
+  width: 20%;
   select {
     padding: 5px;
     border: none;
+    font-size: ${theme.font.size.small};
   }
 `;
 
 export const TextFontSize = styled.div`
   padding: 5px 20px;
   border-right: 1px solid ${theme.colors.inputborder};
+  text-align: center;
+  width: 20%;
   span {
     padding: 5px;
     border: none;
@@ -52,17 +62,40 @@ export const TextFontSize = styled.div`
   .fontSize {
     border: 1px solid ${theme.colors.inputborder};
     border-radius: 5px;
+    font-size: ${theme.font.size.medium};
+    width: 30px;
+    text-align: center;
+    outline: none;
+
+    -moz-appearance: textfield; /* Firefox */
+  -webkit-appearance: none;   /* Chrome, Safari */
+  appearance: none;           /* Standard */
+
+  }
+
+  .fontSize::-webkit-outer-spin-button,
+.fontSize::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+  .fontdes {
+    font-size: ${theme.font.size.medium};
   }
 `;
 
 export const TextIndex = styled.div`
   padding: 5px 20px;
+  text-align: center;
+  width: 40%;
 
   .SlateButton {
     background: ${(props) =>
       props.active ? theme.colors.blue : theme.colors.white};
     border: none;
     cursor: pointer;
-    font-size: ${theme.font.size.large};
+    font-size: ${theme.font.size.medium};
   }
 `;
+
+

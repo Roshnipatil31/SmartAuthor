@@ -40,6 +40,7 @@ const theme = {
     family: "'poppins', sans-serif",
     interfamily: "'Inter', sans-serif",
     Geologica: "'Geologica'",
+    Helvetica: "'Helvetica Now Display'",
   },
   breakpoint: {
     xxxl: "1600px",

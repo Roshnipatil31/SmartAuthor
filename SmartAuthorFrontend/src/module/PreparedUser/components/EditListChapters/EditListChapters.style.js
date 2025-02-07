@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../../../theme/Themes";
 
 export const SidebarContainer = styled.div`
-  width: 250px;
+  width: 20%;
   height: 85vh;
   padding: 15px;
   margin: 0px 0px 10px 10px;
@@ -14,30 +14,39 @@ export const SidebarContainer = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 3;
 }
 
 .modal-content {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 500px;
-  max-width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 80vh;
+    overflow-y: scroll;
+    position: relative;
+
+    @media (max-width: 576px) {
+      min-width: 300px;
+      height: 105vh;
+    }
 }
 
 .close-button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border: none;
-  background: red;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
+  position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: ${theme.font.size.xlarge};
+    background: ${theme.colors.transparnt};
+    color: ${theme.colors.inputborder};
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 `;

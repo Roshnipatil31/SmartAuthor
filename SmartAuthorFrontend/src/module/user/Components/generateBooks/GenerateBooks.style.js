@@ -85,6 +85,12 @@ export const GenerateBooksTitle = styled.p`
   font-weight: bold;
   margin: 0;
   padding-left: 20px;
+
+  @media ${theme.media.sm} {
+    font-size: ${theme.font.size.xxlarge};
+    text-align: justify;
+    padding: 0;
+  }
 `;
 
 export const GeneratebooksContent = styled.div`
@@ -92,11 +98,7 @@ export const GeneratebooksContent = styled.div`
   flex-direction: row;
   gap: 20px;
 
-  @media (max-width: 1200px) {
-    gap: 15px;
-  }
-
-  @media (max-width: 768px) {
+  @media ${theme.media.sm} {
     flex-direction: column;
     align-items: center;
   }
@@ -129,19 +131,19 @@ export const GenerateIcon = styled.div`
     font-size: ${theme.font.size.xxlarge};
   }
 
-  @media (max-width: 768px) {
-    width: 80px;
-    height: 80px;
+  @media ${theme.media.md} {
+    width: 110px;
+    height: 105px;
   }
 
-  @media (max-width: 576px) {
-    width: 70px;
-    height: 70px;
+  @media ${theme.media.sm} {
+    width: 120px;
+    height: 115px;
   }
 
-  @media (max-width: 480px) {
-    width: 60px;
-    height: 60px;
+  @media ${theme.media.xs} {
+    width: 130px;
+    height: 125px;
   }
 `;
 
@@ -162,9 +164,9 @@ export const GenerateIconTitle = styled.p`
   width: 120px;
   text-align: center;
 
-  @media (max-width: 576px) {
-    font-size: ${theme.font.size.xsmall};
-    width: 100px;
+  @media ${theme.media.sm} {
+    font-size: ${theme.font.size.medium};
+    width: 200px;
   }
 `;
 
@@ -174,7 +176,8 @@ export const GenerateIconDescription = styled.p`
   text-align: center;
   margin: 0;
 
-  @media (max-width: 576px) {
-    font-size: ${theme.font.size.xsmall};
+  @media ${theme.media.sm} {
+    font-size: ${theme.font.size.medium};
+    width: 200px;
   }
 `;

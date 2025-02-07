@@ -1,5 +1,10 @@
 import React, { useCallback, useMemo, useState, useRef } from "react";
-import { createEditor, Transforms, Editor } from "slate";
+import {
+  createEditor,
+  Transforms,
+  Editor,
+  Element as SlateElement,
+} from "slate";
 import { Slate, Editable, withReact } from "slate-react";
 import {
   TextEditorWrapper,
@@ -8,9 +13,12 @@ import {
   TextFamily,
   TextFontSize,
   TextIndex,
+ 
 } from "./TextEditor.style";
 import { FaBold, FaItalic, FaUnderline } from "react-icons/fa";
 import { RiAttachment2 } from "react-icons/ri";
+import { HiLink } from "react-icons/hi";
+import { FaAlignLeft, FaAlignCenter, FaAlignRight } from "react-icons/fa6";
 
 const TextEditor = () => {
   const editor = useMemo(() => withReact(createEditor()), []);
@@ -27,6 +35,43 @@ const TextEditor = () => {
   const handlePlus = () => setFontSize((size) => size + 1);
   const handleMinus = () => setFontSize((size) => Math.max(1, size - 1));
 
+  const [fontFamily, setFontFamily] = useState("");
+
+  const fontFamilies = [
+    "Arial",
+    "Helvetica",
+    "Times New Roman",
+    "Georgia",
+    "Courier New",
+    "Verdana",
+    "Trebuchet MS",
+    "Tahoma",
+    "Impact",
+    "Comic Sans MS",
+    "Lucida Console",
+    "Palatino Linotype",
+    "Garamond",
+    "Bookman",
+    "Arial Black",
+    "Franklin Gothic Medium",
+    "Century Gothic",
+    "Copperplate",
+    "Futura",
+    "Gill Sans",
+    "Roboto",
+    "Lora",
+    "Open Sans",
+    "Montserrat",
+    "Raleway",
+    "PT Sans",
+    "Oswald",
+    "Droid Sans",
+  ];
+
+  const handleFontFamilyChange = (event) => {
+    console.log("Selected font family:", event.target.value);
+    setFontFamily(event.target.value);
+  };
   const toggleFormat = (format) => {
     const isActive = isFormatActive(editor, format);
     if (isActive) {
@@ -45,43 +90,47 @@ const TextEditor = () => {
     setValue(newValue);
   }, []);
 
+  // Function to insert a link at the current selection
+  const insertLink = (editor, url, text = url) => {
+    if (!url) return;
+
+    const { selection } = editor;
+    if (selection && Editor.string(editor, selection) !== "") {
+      Transforms.wrapNodes(
+        editor,
+        { type: "link", url, children: [{ text }] },
+        { split: true }
+      );
+    } else {
+      Transforms.insertNodes(editor, {
+        type: "link",
+        url,
+        children: [{ text }],
+      });
+      Transforms.insertText(editor, " "); // Add space after the link
+    }
+  };
+
+  // Handle file upload and insert as a link
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
       const fileURL = URL.createObjectURL(file);
-      const newNode = {
-        type: "link",
-        url: fileURL,
-        children: [{ text: `${file.name}` }],
-      };
-  
-      // Insert the file link node
-      Transforms.insertNodes(editor, newNode);
-  
-      // Add a non-breaking space after the link to give space after it
-      Transforms.insertText(editor, "\u00A0");
-  
-      // Insert a new empty text node (paragraph) to continue writing normally
-      Transforms.insertNodes(editor, {
-        type: "paragraph",
-        children: [{ text: "" }],
-      });
+      insertLink(editor, fileURL, file.name);
     }
   };
-  
 
-//   const handleFileUpload = (event) => {
-//     const file = event.target.files[0];
-//     if (file) {
-//       const fileURL = URL.createObjectURL(file);
-//       const newNode = {
-//         type: "link",
-//         url: fileURL,
-//         children: [{ text: file.name }],
-//       };
-//       Transforms.insertNodes(editor, newNode);
-//     }
-//   };
+  const setAlignment = (align) => {
+    Transforms.setNodes(
+      editor,
+      { align },
+      {
+        match: (n) => SlateElement.isElement(n) && Editor.isBlock(editor, n),
+        split: true,
+      }
+    );
+  };
+
 
   return (
     <TextEditorWrapper>
@@ -95,29 +144,60 @@ const TextEditor = () => {
           </select>
         </TextSize>
         <TextFamily>
-          <select name="TextFamily" id="TextFamily">
-            <option value="Poppins">Poppins</option>
-            <option value="Arial">Arial</option>
-            <option value="Inter">Inter</option>
-            <option value="Comic Sans">Comic Sans</option>
+          <select onChange={handleFontFamilyChange} value={fontFamily}>
+            {fontFamilies.map((font, index) => (
+              <option key={index} value={font}>
+                {font}
+              </option>
+            ))}
           </select>
         </TextFamily>
+
         <TextFontSize>
-          <span onClick={handlePlus}>+</span>
-          <span className="fontSize">{fontSize}</span>
-          <span onClick={handleMinus}>-</span>
+          <span onClick={handlePlus} className="fontdes">
+            +
+          </span>
+          <input
+            type="text"
+            value={fontSize}
+            onChange={(e) => {
+              const inputValue = e.target.value;
+              const newSize = parseInt(inputValue, 10);
+              // Check if the input is a valid number and within the range 1 to 100
+              if (/^\d+$/.test(inputValue) && newSize >= 1 && newSize <= 100) {
+                setFontSize(newSize);
+              } else if (inputValue === "") {
+                // Allow empty input to clear the value
+                setFontSize("");
+              }
+            }}
+            className="fontSize"
+          />
+
+          <span onClick={handleMinus} className="fontdes">
+            -
+          </span>
         </TextFontSize>
         <TextIndex>
           <button className="SlateButton" onClick={() => toggleFormat("bold")}>
             <FaBold />
           </button>
-          <button className="SlateButton" onClick={() => toggleFormat("italic")}>
+          <button
+            className="SlateButton"
+            onClick={() => toggleFormat("italic")}
+          >
             <FaItalic />
           </button>
-          <button className="SlateButton" onClick={() => toggleFormat("underline")}>
+          <button
+            className="SlateButton"
+            onClick={() => toggleFormat("underline")}
+          >
             <FaUnderline />
           </button>
-          <button className="SlateButton" onClick={() => fileInputRef.current.click()}>
+          <button
+            className="SlateButton"
+            onClick={() => fileInputRef.current.click()}
+          >
             <RiAttachment2 />
           </button>
           <input
@@ -127,12 +207,35 @@ const TextEditor = () => {
             onChange={handleFileUpload}
             accept=".txt,.pdf,.doc,.docx"
           />
+          <button
+            className="SlateButton"
+            onClick={() => insertLink(editor, prompt("Enter URL:"))}
+          >
+            <HiLink />
+          </button>
+          <button className="SlateButton" onClick={() => setAlignment("left")}>
+            <FaAlignLeft />
+          </button>
+          <button
+            className="SlateButton"
+            onClick={() => setAlignment("center")}
+          >
+            <FaAlignCenter />
+          </button>
+          <button className="SlateButton" onClick={() => setAlignment("right")}>
+            <FaAlignRight />
+          </button>
         </TextIndex>
       </TextEditComponents>
-      <Slate editor={editor} value={value} onChange={handleChange} initialValue={initialValue}>
+      <Slate
+        editor={editor}
+        value={value}
+        onChange={handleChange}
+        initialValue={initialValue}
+      >
         <Editable
           className="editable"
-          style={{ fontSize: `${fontSize}px` }}
+          style={{ fontSize: `${fontSize}px`, fontFamily: `${fontFamily}` }}
           renderElement={(props) => <Element {...props} />}
           renderLeaf={(props) => <Leaf {...props} />}
           placeholder="Enter some text..."
@@ -140,55 +243,42 @@ const TextEditor = () => {
           autoFocus
         />
       </Slate>
+
+
     </TextEditorWrapper>
   );
 };
 
+// Define how elements are rendered
 const Element = ({ attributes, children, element }) => {
-    if (element.type === "link") {
-      return (
-      
+  const style = { textAlign: element.align, margin: "0px" };
+
+  if (element.type === "link") {
+    return (
+      <>
         <a
           {...attributes}
           href={element.url}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: "underline", color: "blue" }} // Remove link styling
-          onClick={(e) => {
-            e.preventDefault();
-            window.open(element.url, "_blank");
-          }}
+          contentEditable={false}
+          style={{ textDecoration: "underline", color: "blue", fontSize: "12px" }}
         >
-          {children} 
+          {children}
         </a>
-        
-      );
-    }
-    return <p {...attributes}>{children}</p>;
-  };
-  
+        <p contentEditable={true}></p>
+      </>
+    );
+  }
 
-// const Element = ({ attributes, children, element }) => {
-//     if (element.type === "link") {
-//       return (
-//         <a
-//           {...attributes}
-//           href={element.url}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           style={{ textDecoration: "underline", cursor: "pointer",  }}
-//           onClick={(e) => {
-//             e.preventDefault();
-//             window.open(element.url, "_blank");
-//           }}
-//         >
-//           {children}
-//         </a>
-//       );
-//     }
-//     return <p {...attributes}>{children}</p>;
-//   };
-  
+  return (
+    <p {...attributes} style={style}>
+      {children}
+    </p>
+  );
+};
+
+// Define how text decorations are applied
 const Leaf = ({ attributes, children, leaf }) => {
   if (leaf.bold) {
     children = <strong>{children}</strong>;
@@ -200,6 +290,14 @@ const Leaf = ({ attributes, children, leaf }) => {
     children = <u>{children}</u>;
   }
   return <span {...attributes}>{children}</span>;
+};
+
+// Ensure links are treated as inline elements
+const withLinks = (editor) => {
+  const { isInline } = editor;
+  editor.isInline = (element) =>
+    element.type === "link" ? true : isInline(element);
+  return editor;
 };
 
 export default TextEditor;

@@ -4,7 +4,9 @@ import theme from "../../../../theme/Themes";
 export const TempletesWapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  gap:20px;
+  margin: 20px 0 0 20px;
+
 `;
 
 export const TempletesHeader = styled.div`
@@ -12,7 +14,7 @@ export const TempletesHeader = styled.div`
   justify-content: flex-start;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media ${theme.media.md} {
     justify-content: center;
   }
 `;
@@ -52,7 +54,7 @@ export const TemplateCard = styled.div`
     width: 180px;
   }
 
-  @media (max-width: 480px) {
+  @media ${theme.media.xs} {
     width: 160px;
   }
 `;
@@ -70,6 +72,11 @@ export const TemplateContent = styled.div`
   font-size: 12px;
   width: 150px;
   color: #555;
+
+  @media ${theme.media.md} {
+    width: 130px;
+    padding: 5px;
+  }
 `;
 
 export const TemplateTitle = styled.h3`
@@ -89,7 +96,7 @@ export const TemplateFooter = styled.div`
   color: #fff;
   border-top: 1px solid #ddd;
 
-  @media (max-width: 768px) {
+  @media ${theme.media.md} {
     font-size: 12px;
   }
 `;
