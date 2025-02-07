@@ -32,7 +32,7 @@ export const BookCard = styled.div`
 export const BookCover = styled.img`
   width: 100px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 12px;
   border: 2px solid ${theme.colors.inputborder};
 
   @media ${theme.media.lg} {

@@ -50,7 +50,7 @@ const theme = {
     md: "768px",
     sm: "576px",
     xs: "480px",
-  },
+  }, 
   media: {
     xs: `(max-width: 480px)`,
     sm: `(max-width: 576px)`,

@@ -98,9 +98,11 @@ const ProfileDetails = () => {
 
         <p><strong>Joined in:</strong> Month DD YEAR</p>
         <p>
-          <strong>Favorite <span style={{ color: theme.colors.navy }}>GENRES</span>:</strong>{" "}
-          Romance, Mystery/Thriller, Fantasy, Science Fiction, +5 More
+          <strong>Favorite <span style={{ color: theme.colors.navy }}>GENRES</span></strong>{" "}
+          
+          
         </p>
+        <p>Romance, Mystery/Thriller, Fantasy, Science Fiction, +5 More</p>
         <p><strong>Gender:</strong> Male</p>
         <p><strong>Location:</strong> City, Country</p>
         <p><strong>Birth Day:</strong> DD/MM/YYYY</p>
