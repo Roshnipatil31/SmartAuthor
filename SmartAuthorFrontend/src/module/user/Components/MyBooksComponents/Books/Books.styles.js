@@ -27,7 +27,7 @@ export const BooksContainer = styled.div`
 export const BookImage = styled.img`
   width: 120px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 12px;
   border: 1px solid ${theme.colors.inputborder};
   transition: transform 0.3s ease-in-out;
 

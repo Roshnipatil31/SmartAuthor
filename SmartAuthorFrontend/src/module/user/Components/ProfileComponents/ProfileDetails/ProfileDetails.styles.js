@@ -30,13 +30,13 @@ export const ProfileInfo = styled.div`
   h2 {
     font-size: ${theme.font.size.xxlarge};
     // font-family: ${theme.font.Headerfamily};
-    color: ${theme.colors.header};
+    color: ${theme.colors.black};
   }
 
   p {
     font-size: ${theme.font.size.medium};
     font-family: ${theme.font.family};
-    color: ${theme.colors.gray};
+    color: ${theme.colors.black};
     margin: 5px 0;
   }
 `;

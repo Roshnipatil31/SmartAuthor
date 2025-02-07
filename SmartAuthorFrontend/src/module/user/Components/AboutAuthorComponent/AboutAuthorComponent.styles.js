@@ -75,10 +75,10 @@ export const AuthorTitle = styled.h2`
 `;
 
 export const AuthorDescription = styled.p`
-  font-size: ${theme.font.size.medium};
+  font-size: ${theme.font.size.large};
   line-height: 1.6;
-  color: ${theme.colors.gray};
-  font-family: ${theme.font.family};
+  // color: ${theme.colors.gray};
+  font-family: ${theme.font.black};
   margin-bottom: 10px;
   width: 90%;
 

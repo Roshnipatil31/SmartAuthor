@@ -5,7 +5,7 @@ import {
   BookInfo,
   StarRating,
   ProgressBar,
-  ContinueButton
+  ContinueButton,
 } from "./ProfileMyBookProgress.styles";
 import BookCover from "../../../../../assets/Book3.jpg"; // Add book cover image
 

@@ -28,12 +28,12 @@ export const BookInfo = styled.div`
   h3 {
     font-size: ${theme.font.size.large};
     // font-family: ${theme.font.Headerfamily};
-    color: ${theme.colors.header};
+    color: ${theme.colors.black};
   }
 
   p {
     font-size: ${theme.font.size.medium};
-    color: ${theme.colors.gray};
+    color: ${theme.colors.black};
   }
 `;
 

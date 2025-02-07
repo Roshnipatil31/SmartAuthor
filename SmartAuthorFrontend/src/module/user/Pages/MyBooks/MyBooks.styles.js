@@ -3,6 +3,10 @@ import theme from "../../../../theme/Themes";
 
 export const Container = styled.div`
   padding: 20px;
+
+  h2 {
+    color: ${theme.colors.navy};
+  }
 `;
 
 export const Header = styled.div`
