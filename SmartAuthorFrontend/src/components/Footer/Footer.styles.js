@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../theme/Themes"; // Import theme.js directly
 
 export const FooterContainer = styled.footer`
-  background-color: ${theme.colors.white}; 
+  background: ${theme.colors.previewBg}; 
   padding: 15px 40px;
   text-align: center;
   font-family: ${theme.font.family};

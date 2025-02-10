@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import theme from "../../../../theme/Themes"
 
 const steps = ["Fill Information", "Write", "Add Cover Page", "Publish"];
 
@@ -27,9 +28,14 @@ const ProgressContainer = styled.div`
   gap: 40px;
   padding: 10px;
   box-shadow: 0px 0px 5px #0004;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  background: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: ${theme.colors.white};
+
+  @media ${theme.media.lg} {
+  border-radius: 0px;
+  box-shadow: unset;
+  }
 `;
 
 const Step = styled.div`
