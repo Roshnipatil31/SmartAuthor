@@ -14,6 +14,7 @@ import {
 } from "./EditListChapters.style";
 import { FiChevronDown, FiSearch, FiBook, FiFileText } from "react-icons/fi";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
+import { GoPlus } from "react-icons/go";
 import BrainstormingTag from "../Brainstorming/BrainstormingTag"; // Import Feedback component
 import { useNavigate } from "react-router-dom";
 
@@ -29,8 +30,8 @@ const EditListChapters = () => {
     setIsModalOpen(false);
   };
 
-  const handleAddChapter = () => {
-    navigate('/addchapter');  
+  const handleOpenModals = () => {
+    setIsModalOpen(true);
   };
 
   return (
@@ -38,7 +39,7 @@ const EditListChapters = () => {
       <UserName>Sneha Gadkar</UserName>
       
       <ButtonGroup>
-        <StyledButton onClick={handleAddChapter}>+ Add new</StyledButton>
+        <StyledButton>+ Add new</StyledButton>
         <StyledButton><HiOutlinePaintBrush /> Boards</StyledButton>
       </ButtonGroup>
 
@@ -65,7 +66,7 @@ const EditListChapters = () => {
 
       <TagContainer>
         <Tag onClick={handleOpenModal}>Brainstorming</Tag>
-        <Tag>Psychiatrist-Inspired</Tag>
+        <Tag onClick={handleOpenModals}>Psychiatrist-Inspired</Tag>
       </TagContainer>
 
       {isModalOpen && (

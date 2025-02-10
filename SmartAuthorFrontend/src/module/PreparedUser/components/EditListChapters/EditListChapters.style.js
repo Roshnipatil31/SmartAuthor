@@ -61,6 +61,11 @@ export const ButtonGroup = styled.div`
   gap: 10px;
   margin-bottom: 10px;
   justify-content: space-around;
+
+  @media ${theme.media.lg} {
+    flex-direction: column;
+    align-items: anchor-center;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -73,6 +78,8 @@ export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  
 `;
 
 export const EditCoverButton = styled.button`
@@ -122,7 +129,7 @@ export const Tag = styled.button`
   background-color:${theme.colors.navy};
   color: ${theme.colors.white};
   border: none;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border-radius: 20px;
   font-size: 10px;
 `;
