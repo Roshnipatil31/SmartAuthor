@@ -16,9 +16,11 @@ import { FiChevronDown, FiSearch, FiBook, FiFileText } from "react-icons/fi";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { GoPlus } from "react-icons/go";
 import BrainstormingTag from "../Brainstorming/BrainstormingTag"; // Import Feedback component
+import { useNavigate } from "react-router-dom";
 
 const EditListChapters = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -37,7 +39,7 @@ const EditListChapters = () => {
       <UserName>Sneha Gadkar</UserName>
       
       <ButtonGroup>
-        <StyledButton><GoPlus /> Add new</StyledButton>
+        <StyledButton>+ Add new</StyledButton>
         <StyledButton><HiOutlinePaintBrush /> Boards</StyledButton>
       </ButtonGroup>
 
