@@ -45,6 +45,7 @@ export const Leftcontainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
+  
   padding-top: 20px;
   background: #F9F7EE;
   margin-top:25px;
