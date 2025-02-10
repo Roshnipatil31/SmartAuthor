@@ -10,11 +10,15 @@ import {
   ButtonContainer,
 } from "./NewChapter.style";
 import TextEditor from "../TextEditor/TextEditor";
+import { useNavigate } from "react-router-dom";
 
 const NewChapter = () => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleAddChapter = () => {};
+    const handleAddChapter = () => {
+      navigate('/addchapter');  
+    };
   
     const handleNext = () => {};
   
