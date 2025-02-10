@@ -236,7 +236,7 @@ export const ModalContent = styled.div`
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  width: 82%;
+  width: 100%;
   max-width: 100%;
 
   .close-button {
