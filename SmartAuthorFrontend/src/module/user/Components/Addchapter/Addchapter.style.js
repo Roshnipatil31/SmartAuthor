@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import theme from "../../../../theme/Themes";
 
+
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -45,7 +47,7 @@ export const Leftcontainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
-  
+
   padding-top: 20px;
   background: #F9F7EE;
   margin-top:25px;
