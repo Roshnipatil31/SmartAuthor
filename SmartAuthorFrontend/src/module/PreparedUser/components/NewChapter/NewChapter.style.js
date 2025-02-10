@@ -61,6 +61,10 @@ export const ButtonContainer = styled.div`
   justify-content: center;
   align-items: anchor-center;
 
+  @media ${theme.media.lg} {
+    bottom: 40px;
+  }
+
   .AddChapter {
     background: ${theme.colors.navy};
     color: ${theme.colors.white};

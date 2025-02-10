@@ -15,6 +15,10 @@ export const TextEditorWrapper = styled.div`
     scrollbar-width: none;
     position: relative;
     z-index: 0;
+
+    @media ${theme.media.lg} {
+      height: 78vh;
+    }
   }
 `;
 
@@ -35,6 +39,13 @@ export const TextSize = styled.div`
     border: none;
     font-size: ${theme.font.size.small};
   }
+
+  @media ${theme.media.lg} {
+    width: 15%;
+    select {
+      font-size: ${theme.font.size.xsmall};
+    }
+  }
 `;
 
 export const TextFamily = styled.div`
@@ -46,6 +57,14 @@ export const TextFamily = styled.div`
     padding: 5px;
     border: none;
     font-size: ${theme.font.size.small};
+    width: 100px;
+  }
+
+  @media ${theme.media.lg} {
+    width: 15%;
+    select {
+      font-size: ${theme.font.size.xsmall};
+    }
   }
 `;
 
@@ -82,6 +101,13 @@ export const TextFontSize = styled.div`
   .fontdes {
     font-size: ${theme.font.size.medium};
   }
+
+  @media ${theme.media.lg} {
+    width: 15%;
+    .fontdes {
+      font-size: ${theme.font.size.small};
+    }
+  }
 `;
 
 export const TextIndex = styled.div`
@@ -95,7 +121,13 @@ export const TextIndex = styled.div`
     border: none;
     cursor: pointer;
     font-size: ${theme.font.size.medium};
+
+    @media ${theme.media.lg} {
+      font-size: ${theme.font.size.small};
+    }
   }
+
+
 `;
 
 

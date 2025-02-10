@@ -9,6 +9,14 @@ export const SidebarContainer = styled.div`
   background-color: ${theme.colors.white};
   border-right: 1px solid ${theme.colors.inputborder};
 
+  @media ${theme.media.xl} {
+    width: 27%;
+  }
+
+  @media ${theme.media.lg} {
+    width: 20%;
+  }
+
   .modal-overlay {
   position: fixed;
   top: 0;
@@ -123,15 +131,20 @@ export const TagContainer = styled.div`
   margin-top: 15px;
   position: absolute;
   bottom: 0px;
+
+  @media ${theme.media.lg} {
+    flex-direction: column;
+    bottom: 70px;
+  }
 `;
 
 export const Tag = styled.button`
   background-color:${theme.colors.navy};
   color: ${theme.colors.white};
   border: none;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 20px;
-  font-size: 10px;
+  font-size: 12px;
 `;
 
 export const IconWrapper = styled.span`
