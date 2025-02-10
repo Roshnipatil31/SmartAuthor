@@ -2,6 +2,8 @@ import styled from "styled-components";
 import theme from "../../../../theme/Themes";
 import AuthorBackground from "../../../../assets/AuthorBackground.jpg"; // Import background for title
 
+
+// AboutWrapper
 export const AboutWrapper = styled.div`
   background: ${theme.colors.white};
   // padding: 30px;
