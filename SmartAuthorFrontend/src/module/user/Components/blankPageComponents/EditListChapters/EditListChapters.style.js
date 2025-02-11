@@ -1,10 +1,85 @@
 import styled from "styled-components";
 import theme from "../../../../../theme/Themes";
 
+export const EditListChaptersWapper = styled.div`
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1111;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    height: 80vh;
+    position: relative;
+
+    @media (max-width: 576px) {
+      min-width: 300px;
+      height: 105vh;
+    }
+
+    .circle1 {
+      width: 40%;
+      height: 60%;
+      border-radius: 50%;
+      background: #26507333;
+      position: fixed;
+      z-index: 1;
+      right: 0;
+      top: 15%;
+      left: 65%;
+    }
+    .circle2 {
+      width: 10%;
+      height: 15%;
+      background: rgba(204, 209, 213, 0.27);
+      border-radius: 50%;
+      position: fixed;
+      z-index: 3;
+      top: 75%;
+      left: 35%;
+    }
+
+    .circle3 {
+      width: 40%;
+      height: 80%;
+      background: #26507333;
+      border-radius: 50%;
+      position: fixed;
+      z-index: 1;
+      right: 60%;
+      top: 75%;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: ${theme.font.size.xlarge};
+    background: ${theme.colors.transparnt};
+    color: ${theme.colors.inputborder};
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+`;
+
 export const SidebarContainer = styled.div`
-  width: 250px;
+ width: 250px;
   height: 87vh;
   padding: 15px;
+  /* margin: 0px 0px 10px 10px; */
   background-color: ${theme.colors.white};
   border-right: 1px solid ${theme.colors.inputborder};
   position: fixed;
@@ -24,12 +99,14 @@ export const SidebarContainer = styled.div`
   }
 
   @media ${theme.media.lg} {
+    width: 20%;
     height: 100vh;
   }
+
+  
 `;
 
 export const SidebarOverlay = styled.div`
-
   position: fixed;
   top: 0;
   left: 0;
@@ -38,7 +115,6 @@ export const SidebarOverlay = styled.div`
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px);
   z-index: 999;
-
 `;
 
 export const HamburgerButton = styled.button`
@@ -70,7 +146,7 @@ export const ButtonGroup = styled.div`
 
   @media ${theme.media.lg} {
     flex-direction: column;
-    align-items: center;
+    align-items: anchor-center;
   }
 `;
 
@@ -125,7 +201,7 @@ export const TagContainer = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 15px;
-  position: fixed;
+  position: absolute;
   bottom: 40px;
 
   @media ${theme.media.lg} {
