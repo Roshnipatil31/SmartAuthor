@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../../../../theme/Themes";
+import theme from "../../../../../theme/Themes";
 
 export const TextEditorWrapper = styled.div`
   display: flex;
@@ -44,6 +44,7 @@ export const TextSize = styled.div`
     width: 15%;
     select {
       font-size: ${theme.font.size.xsmall};
+      width: 70px;
     }
   }
 `;
@@ -64,6 +65,7 @@ export const TextFamily = styled.div`
     width: 15%;
     select {
       font-size: ${theme.font.size.xsmall};
+      width: 70px;
     }
   }
 `;
@@ -103,7 +105,8 @@ export const TextFontSize = styled.div`
   }
 
   @media ${theme.media.lg} {
-    width: 15%;
+    width: 30%;
+    padding: 5px;
     .fontdes {
       font-size: ${theme.font.size.small};
     }
@@ -127,7 +130,10 @@ export const TextIndex = styled.div`
     }
   }
 
-
+  @media ${theme.media.lg} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 

@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
-import { SingleBookContentWrapper, Page, PageHeader, Content, PageNavigation, NavigationButton } from './SingleBookContent.styles';
+import { 
+  SingleBookContentWrapper, 
+  ScrollableSection, 
+  PageContainer, 
+  Page, 
+  PageHeader, 
+  Content, 
+  PageNavigation, 
+  NavigationButton, 
+  BookTitle, 
+  SubTitle, 
+  AboutAuthor, 
+  DownloadButton
+} from './SingleBookContent.styles';
 
 const SingleBookContent = ({ viewPage }) => {
+  const pagesPerChapter = 15;
+  const totalPages = 15 + 10;
+
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pagesPerChapter = 15; // Simulate 15 pages
-  const totalPages = pagesPerChapter * 10; // 10 chapters, 15 pages each
-
-  // Dummy data for each page
   const dummyContent = Array.from({ length: totalPages }, (_, index) => 
-    `This is dummy content for Page ${index + 1} of Chapter ${viewPage}. It's a placeholder text to simulate content.`
+    `This is dummy content for Page ${index + 1} of Chapter ${viewPage}.`
   );
 
   const handleNextPage = () => {
@@ -26,12 +38,30 @@ const SingleBookContent = ({ viewPage }) => {
 
   return (
     <SingleBookContentWrapper>
-      <Page>
-        <PageHeader>Chapter {viewPage}</PageHeader>
-        <Content>
-          <p>{dummyContent[currentPage - 1]}</p>
-        </Content>
-      </Page>
+      {/* Scrollable Section containing Book Details & Pages */}
+      <ScrollableSection>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <DownloadButton>Download Book</DownloadButton>
+      </div>
+
+        <BookTitle>Book Title: The Art of Learning</BookTitle>
+        <SubTitle>Sub-Title: Mastering the Craft</SubTitle>
+        <AboutAuthor>
+          About the Author: John Doe is a renowned educator with over 20 years of experience in teaching and research.
+        </AboutAuthor>
+
+        {/* Page Display Section */}
+        <PageContainer>
+          {dummyContent.map((content, index) => (
+            <Page key={index}>
+              <PageHeader>Chapter {viewPage} - Page {index + 1}</PageHeader>
+              <Content>
+                <p>{content}</p>
+              </Content>
+            </Page>
+          ))}
+        </PageContainer>
+      </ScrollableSection>
 
       {/* Page Navigation */}
       <PageNavigation>

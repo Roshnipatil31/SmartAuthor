@@ -7,7 +7,7 @@ import { FooterContainer, FooterContent, FooterLeft, SocialIcons, FooterRight, C
 const Footer = () => {
   return (
     <FooterContainer>
-        <hr />
+        <hr className="footer-hr" />
       <FooterContent>
         <FooterLeft>
           <Link to="/faq">FAQ</Link>

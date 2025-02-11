@@ -9,14 +9,14 @@ import Footer from "./components/Footer/Footer";
 import Dashboard from "./module/user/Pages/Dashboard/Dashboard";
 import MyBooks from "./module/user/Pages/MyBooks/MyBooks";
 import Library from "./module/user/Pages/Library/Library";
-import Step from "./module/user/Components/StepComponent/Step";
+import Step from "./module/user/Components/blankPageComponents/StepComponent/StepComponent";
 import ContactUs from "./module/user/Pages/ContactUs/ContactUs";
 import Profile from "./module/user/Pages/Profile/Profile";
-import BlankPage from "./module/PreparedUser/Pages/BlankPage/BlankPage";
+import BlankPage from "./module/user/Pages/BlankPage/BlankPage";
 import AboutAuthor from "./module/user/Pages/AboutAuthor/AboutAuthor";
 import SemiPrapared from "./module/user/Pages/SemiPrepared/SemiPrapared";
 import UnPreparedUsers from "./module/user/Pages/UnPreparedUsers/UnPreparedUsers";
-import EditBookDetails from "./module/PreparedUser/components/EditBookDetails/EditBookDetails";
+import EditBookDetails from "./module/user/Components/blankPageComponents/EditBookDetails/EditBookDetails";
 import Addchapter from "./module/user/Components/Addchapter/Addchapter";
 import FullBook from "./module/user/Pages/FullBook/FullBook";
 
@@ -51,7 +51,7 @@ function App() {
         <Route path="/UnPreparedUsers" element={<DashboardLayout>< UnPreparedUsers /></DashboardLayout>} />
         <Route path="/edit-book" element={<EditBookDetails />} />
         <Route path="/addchapter" element={<Addchapter />} />
-        <Route path="/full-book" element={<FullBook />} />
+        <Route path="/full-book" element={<DashboardLayout><FullBook /></DashboardLayout>} />
       </Routes>
     </BrowserRouter>
   );

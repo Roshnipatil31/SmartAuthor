@@ -1,37 +1,22 @@
 import styled from "styled-components";
-import theme from "../../../../theme/Themes";
+import theme from "../../../../../theme/Themes";
 
-export const SidebarContainer = styled.div`
-  width: 20%;
-  height: 85vh;
-  padding: 15px;
-  margin: 0px 0px 10px 10px;
-  background-color: ${theme.colors.white};
-  border-right: 1px solid ${theme.colors.inputborder};
-
-  @media ${theme.media.xl} {
-    width: 27%;
+export const EditListChaptersWapper = styled.div`
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1111;
   }
 
-  @media ${theme.media.lg} {
-    width: 20%;
-  }
-
-  .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
-
-.modal-content {
-  background: white;
+  .modal-content {
+    background: white;
     padding: 20px;
     border-radius: 10px;
     width: 50%;
@@ -43,42 +28,42 @@ export const SidebarContainer = styled.div`
       height: 105vh;
     }
 
-     .circle1 {
-  width: 40%;  
-  height: 60%;  
-   border-radius: 50%;
-  background: #26507333;
-  position: fixed;
-  z-index: 1;
-  right: 0;
-  top: 15%;
-  left: 65%;
-  }
-  .circle2{
-  width: 10%;   
-  height: 15%;  
-  background:rgba(204, 209, 213, 0.27);
-  border-radius: 50%;
-  position: fixed;
-  z-index: 3;
-  top: 75%;
-  left: 35%;
+    .circle1 {
+      width: 40%;
+      height: 60%;
+      border-radius: 50%;
+      background: #26507333;
+      position: fixed;
+      z-index: 1;
+      right: 0;
+      top: 15%;
+      left: 65%;
+    }
+    .circle2 {
+      width: 10%;
+      height: 15%;
+      background: rgba(204, 209, 213, 0.27);
+      border-radius: 50%;
+      position: fixed;
+      z-index: 3;
+      top: 75%;
+      left: 35%;
+    }
+
+    .circle3 {
+      width: 40%;
+      height: 80%;
+      background: #26507333;
+      border-radius: 50%;
+      position: fixed;
+      z-index: 1;
+      right: 60%;
+      top: 75%;
+    }
   }
 
-  .circle3{
-  width: 40%;   
-  height: 80%;  
-  background: #26507333;
-  border-radius: 50%;
-  position: fixed;
-  z-index: 1;
-  right: 60%;
-  top: 75%;
-  }
-}
-
-.close-button {
-  position: absolute;
+  .close-button {
+    position: absolute;
     top: 10px;
     right: 10px;
     font-size: ${theme.font.size.xlarge};
@@ -87,7 +72,65 @@ export const SidebarContainer = styled.div`
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-}
+  }
+`;
+
+export const SidebarContainer = styled.div`
+ width: 250px;
+  height: 87vh;
+  padding: 15px;
+  /* margin: 0px 0px 10px 10px; */
+  background-color: ${theme.colors.white};
+  border-right: 1px solid ${theme.colors.inputborder};
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 990px) {
+    transform: translateX(0);
+    position: relative;
+  }
+
+  @media ${theme.media.lg} {
+    width: 20%;
+    height: 100vh;
+  }
+
+  
+`;
+
+export const SidebarOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+`;
+
+export const HamburgerButton = styled.button`
+  position: absolute;
+  top: 95px;
+  left: 1rem;
+  background: ${theme.colors.white};
+  border: 1px solid ${theme.colors.inputborder};
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 979;
+
+  @media (min-width: 990px) {
+    display: none;
+  }
 `;
 
 export const UserName = styled.h3`
@@ -159,7 +202,7 @@ export const TagContainer = styled.div`
   gap: 10px;
   margin-top: 15px;
   position: absolute;
-  bottom: 0px;
+  bottom: 40px;
 
   @media ${theme.media.lg} {
     flex-direction: column;
@@ -168,7 +211,7 @@ export const TagContainer = styled.div`
 `;
 
 export const Tag = styled.button`
-  background-color:${theme.colors.navy};
+  background-color: ${theme.colors.navy};
   color: ${theme.colors.white};
   border: none;
   padding: 10px;

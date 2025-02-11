@@ -13,7 +13,7 @@ export const BlankPageWrapper = styled.div`
     gap: 10px;
     width: 95%;
     margin: 0 auto;
-    height: 100vh;
+    height: 90vh;
     background: ${theme.colors.transparnt};
 
     @media ${theme.media.xl} {
