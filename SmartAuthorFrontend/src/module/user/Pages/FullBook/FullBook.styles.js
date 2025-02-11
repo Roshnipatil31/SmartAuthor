@@ -11,7 +11,6 @@ export const LeftSide = styled.div`
   width: 20%;
   padding: 10px;
   background-color: ${theme.colors.white};
-  border-right: 1px solid ${theme.colors.gray};
   
   @media ${theme.media.md} {
     width: 30%;
