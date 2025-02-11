@@ -72,6 +72,9 @@ const EditListChapters = () => {
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
+          <div className="circle1"></div>
+         <div className="circle2"></div>
+        <div className="circle3"></div>
             <BrainstormingTag />
             <button className="close-button" onClick={handleCloseModal}>
               x

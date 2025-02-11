@@ -34,15 +34,47 @@ export const SidebarContainer = styled.div`
   background: white;
     padding: 20px;
     border-radius: 10px;
-    width: 500px;
+    width: 50%;
     height: 80vh;
-    overflow-y: scroll;
     position: relative;
 
     @media (max-width: 576px) {
       min-width: 300px;
       height: 105vh;
     }
+
+     .circle1 {
+  width: 40%;  
+  height: 60%;  
+   border-radius: 50%;
+  background: #26507333;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 15%;
+  left: 65%;
+  }
+  .circle2{
+  width: 10%;   
+  height: 15%;  
+  background:rgba(204, 209, 213, 0.27);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 3;
+  top: 75%;
+  left: 35%;
+  }
+
+  .circle3{
+  width: 40%;   
+  height: 80%;  
+  background: #26507333;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1;
+  right: 60%;
+  top: 75%;
+  }
 }
 
 .close-button {
@@ -56,7 +88,6 @@ export const SidebarContainer = styled.div`
     padding: 5px 10px;
     cursor: pointer;
 }
-
 `;
 
 export const UserName = styled.h3`
@@ -86,8 +117,6 @@ export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   gap: 10px;
-
-  
 `;
 
 export const EditCoverButton = styled.button`
