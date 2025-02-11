@@ -1,8 +1,8 @@
 import React from "react";
-import Step from "../../../user/Components/StepComponent/StepComponent";
+import Step from "../../Components/blankPageComponents/StepComponent/StepComponent";
 import { BlankPageWrapper } from "./BlankPage.style";
-import EditListChapters from "../../components/EditListChapters/EditListChapters";
-import NewChapter from "../../components/NewChapter/NewChapter";
+import EditListChapters from "../../Components/blankPageComponents/EditListChapters/EditListChapters";
+import NewChapter from "../../Components/blankPageComponents/NewChapter/NewChapter";
 
 const BlankPage = () => {
   return (

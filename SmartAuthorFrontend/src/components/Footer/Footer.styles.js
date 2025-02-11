@@ -11,6 +11,10 @@ export const FooterContainer = styled.footer`
   @media ${theme.media.md} {
     padding: 15px 20px;
   }
+
+  .footer-hr{
+    border: 1px solid ${theme.colors.black};
+  }
 `;
 
 export const FooterContent = styled.div`

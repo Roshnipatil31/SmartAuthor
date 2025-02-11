@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { 
   ContactFormContainer, 
   FormTitle, 
@@ -7,11 +9,13 @@ import {
   SubmitButton, 
   FormWrapper, 
   ImageWrapper, 
-  StyledImage, 
-  ErrorText
+  StyledImage
 } from "./ContactUsComponent.styles";
 
 import contactImage from "../../../../assets/ContactUs.png"; // Ensure this image exists in the assets folder
+
+
+
 
 const ContactUsComponent = () => {
   const [formData, setFormData] = useState({
@@ -20,57 +24,68 @@ const ContactUsComponent = () => {
     message: "",
   });
 
-  const [errors, setErrors] = useState({});
+  
+const notifyError = (message) => {
+  console.log("Toast Error:", message); // Debugging log
+  toast.error(message, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
-  const validate = () => {
-    let newErrors = {};
-
-    // Name validation (only alphabets allowed, prevent numbers and special characters)
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    } else if (!/^[A-Za-z\s]+$/.test(formData.name)) {
-      newErrors.name = "Name should contain only letters";
-    }
-
-    // Email validation (valid email format)
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Enter a valid email";
-    }
-
-    // Message validation (should not be empty)
-    if (!formData.message.trim()) {
-      newErrors.message = "Message cannot be empty";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+// Function to trigger success toast
+const notifySuccess = (message) => {
+  console.log("Toast Success:", message); // Debugging log
+  toast.success(message, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Prevent numbers in the name field
-    if (name === "name") {
-      if (!/^[A-Za-z\s]*$/.test(value)) {
-        return; // Stop updating state if the input contains numbers
-      }
+    if (name === "name" && !/^[A-Za-z\s]*$/.test(value)) {
+      return;
     }
 
     setFormData({ ...formData, [name]: value });
-
-    // Live validation as the user types
-    setErrors({ ...errors, [name]: "" });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      console.log("Form Submitted:", formData);
-      alert("Form submitted successfully!");
-      setFormData({ name: "", email: "", message: "" });
+    const namePattern = /^[A-Za-z\s]+$/;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (!namePattern.test(formData.name)) {
+      notifyError("Please enter a valid Full Name (alphabets only).");
+      return;
     }
+
+    if (!emailPattern.test(formData.email)) {
+      notifyError("Please enter a valid email address.");
+      return;
+    }
+
+    if (formData.message.trim() === "") {
+      notifyError("Please enter a message.");
+      return;
+    }
+
+    // Show success toast and navigate
+    notifySuccess("Message sent successfully!");
   };
 
   return (
@@ -88,7 +103,6 @@ const ContactUsComponent = () => {
           value={formData.name}
           onChange={handleChange}
         />
-        {errors.name && <ErrorText>{errors.name}</ErrorText>}
 
         <InputField
           type="email"
@@ -97,7 +111,6 @@ const ContactUsComponent = () => {
           value={formData.email}
           onChange={handleChange}
         />
-        {errors.email && <ErrorText>{errors.email}</ErrorText>}
 
         <TextArea
           name="message"
@@ -105,7 +118,6 @@ const ContactUsComponent = () => {
           value={formData.message}
           onChange={handleChange}
         />
-        {errors.message && <ErrorText>{errors.message}</ErrorText>}
 
         <SubmitButton type="submit">Contact Us</SubmitButton>
       </FormWrapper>
