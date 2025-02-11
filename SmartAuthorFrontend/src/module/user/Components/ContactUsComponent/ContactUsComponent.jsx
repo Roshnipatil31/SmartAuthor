@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { 
   ContactFormContainer, 
   FormTitle, 
@@ -7,11 +9,41 @@ import {
   SubmitButton, 
   FormWrapper, 
   ImageWrapper, 
-  StyledImage, 
-  ErrorText
+  StyledImage
 } from "./ContactUsComponent.styles";
 
 import contactImage from "../../../../assets/ContactUs.png"; // Ensure this image exists in the assets folder
+
+toast.configure();
+
+const notifyError = (message) => {
+    console.log("Toast Error:", message); // Debugging log
+    toast.error(message, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+
+// Function to trigger success toast
+const notifySuccess = (message) => {
+    console.log("Toast Success:", message); // Debugging log
+    toast.success(message, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
 const ContactUsComponent = () => {
   const [formData, setFormData] = useState({
@@ -20,55 +52,47 @@ const ContactUsComponent = () => {
     message: "",
   });
 
-  const [errors, setErrors] = useState({});
-
   const validate = () => {
-    let newErrors = {};
-
-    // Name validation (only alphabets allowed, prevent numbers and special characters)
+    let isValid = true;
+    
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+      notifyError("Name is required");
+      isValid = false;
     } else if (!/^[A-Za-z\s]+$/.test(formData.name)) {
-      newErrors.name = "Name should contain only letters";
+      notifyError("Name should contain only letters");
+      isValid = false;
     }
 
-    // Email validation (valid email format)
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      notifyError("Email is required");
+      isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Enter a valid email";
+      notifyError("Enter a valid email");
+      isValid = false;
     }
 
-    // Message validation (should not be empty)
     if (!formData.message.trim()) {
-      newErrors.message = "Message cannot be empty";
+      notifyError("Message cannot be empty");
+      isValid = false;
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return isValid;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Prevent numbers in the name field
-    if (name === "name") {
-      if (!/^[A-Za-z\s]*$/.test(value)) {
-        return; // Stop updating state if the input contains numbers
-      }
+    if (name === "name" && !/^[A-Za-z\s]*$/.test(value)) {
+      return;
     }
 
     setFormData({ ...formData, [name]: value });
-
-    // Live validation as the user types
-    setErrors({ ...errors, [name]: "" });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form Submitted:", formData);
-      alert("Form submitted successfully!");
+      notifySuccess("Form submitted successfully!");
       setFormData({ name: "", email: "", message: "" });
     }
   };
@@ -88,7 +112,6 @@ const ContactUsComponent = () => {
           value={formData.name}
           onChange={handleChange}
         />
-        {errors.name && <ErrorText>{errors.name}</ErrorText>}
 
         <InputField
           type="email"
@@ -97,7 +120,6 @@ const ContactUsComponent = () => {
           value={formData.email}
           onChange={handleChange}
         />
-        {errors.email && <ErrorText>{errors.email}</ErrorText>}
 
         <TextArea
           name="message"
@@ -105,7 +127,6 @@ const ContactUsComponent = () => {
           value={formData.message}
           onChange={handleChange}
         />
-        {errors.message && <ErrorText>{errors.message}</ErrorText>}
 
         <SubmitButton type="submit">Contact Us</SubmitButton>
       </FormWrapper>

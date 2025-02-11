@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../../../../theme/Themes";
+import theme from "../../../../../theme/Themes";
 
 export const NewChapterWrapper = styled.div`
     display: flex;

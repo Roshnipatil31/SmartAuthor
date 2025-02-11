@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import theme from "../../../../theme/Themes"
+import theme from "../../../../../theme/Themes"
 
 const steps = ["Fill Information", "Write", "Add Cover Page", "Publish"];
 
