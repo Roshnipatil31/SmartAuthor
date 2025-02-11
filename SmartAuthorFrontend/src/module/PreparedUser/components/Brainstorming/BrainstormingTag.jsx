@@ -33,9 +33,9 @@ const BrainstormingTag = () => {
 
   return (
     <Container>
-        <div className="circle1"></div>
+        {/* <div className="circle1"></div>
         <div className="circle2"></div>
-        <div className="circle3"></div>
+        <div className="circle3"></div> */}
 
         
       <QuestionTitle>1. How are you feeling about starting this new writing journey?</QuestionTitle>
@@ -61,9 +61,7 @@ const BrainstormingTag = () => {
         <button className="nextbut"
         onClick={handleNext}>Next Question</button>
       </ButtonContainer>
-
       </OptionsContainer>
-
 
       <Questionfooter>
         Remaining Question {questionIndex} / 7

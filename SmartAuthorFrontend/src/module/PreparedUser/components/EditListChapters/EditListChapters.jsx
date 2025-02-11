@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FiChevronDown, FiSearch, FiBook, FiFileText } from "react-icons/fi";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
-import { GoPlus } from "react-icons/go";
 import { GiHamburgerMenu } from "react-icons/gi";
-import BrainstormingTag from "../Brainstorming/BrainstormingTag";
 import { useNavigate } from "react-router-dom";
+import BrainstormingTag from "../Brainstorming/BrainstormingTag";
 import {
   SidebarContainer,
   UserName,
@@ -27,73 +26,70 @@ const EditListChapters = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isSidebarOpen) {
-      document.body.classList.add("blur-background");
-    } else {
-      document.body.classList.remove("blur-background");
-    }
+    document.body.classList.toggle("blur-background", isSidebarOpen);
   }, [isSidebarOpen]);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   return (
     <>
+      {/* Sidebar Toggle Button */}
       <HamburgerButton onClick={toggleSidebar}>
         <GiHamburgerMenu size={24} />
       </HamburgerButton>
+
+      {/* Sidebar Overlay */}
       {isSidebarOpen && <SidebarOverlay onClick={toggleSidebar} />}
+
+      {/* Sidebar Container */}
       <SidebarContainer className={isSidebarOpen ? "open" : ""}>
         <UserName>Sneha Gadkar</UserName>
+
+        {/* Buttons */}
         <ButtonGroup>
           <StyledButton>+ Add new</StyledButton>
           <StyledButton>
             <HiOutlinePaintBrush /> Boards
           </StyledButton>
         </ButtonGroup>
+
         <EditCoverButton>Edit Cover page</EditCoverButton>
+
+        {/* Manuscript Section */}
         <Section>
           <SectionTitle>
-            <FiSearch />
-            <IconWrapper>
-              <FiChevronDown />
-            </IconWrapper>
             <FiBook /> Manuscript
             <IconWrapper>
-              <FiSearch />
+              <FiChevronDown />
             </IconWrapper>
           </SectionTitle>
           <Item>
             <FiFileText /> Boss Chapter 1
           </Item>
-          <Section>
-            <SectionTitle>
-              <IconWrapper>
-                <FiChevronDown />
-              </IconWrapper>
-              <FiBook /> Elements
-              <IconWrapper>
-                <FiSearch />
-              </IconWrapper>
-            </SectionTitle>
-            <Item>
-              <FiFileText /> Character 1
-            </Item>
-          </Section>
         </Section>
+
+        {/* Elements Section */}
+        <Section>
+          <SectionTitle>
+            <FiBook /> Elements
+            <IconWrapper>
+              <FiChevronDown />
+            </IconWrapper>
+          </SectionTitle>
+          <Item>
+            <FiFileText /> Character 1
+          </Item>
+        </Section>
+
+        {/* Tags */}
         <TagContainer>
           <Tag onClick={handleOpenModal}>Brainstorming</Tag>
           <Tag onClick={handleOpenModal}>Psychiatrist-Inspired</Tag>
         </TagContainer>
+
+        {/* Modal */}
         {isModalOpen && (
           <div className="modal-overlay">
             <div className="modal-content">
