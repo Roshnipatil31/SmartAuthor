@@ -51,7 +51,7 @@ function App() {
         <Route path="/UnPreparedUsers" element={<DashboardLayout>< UnPreparedUsers /></DashboardLayout>} />
         <Route path="/edit-book" element={<EditBookDetails />} />
         <Route path="/addchapter" element={<Addchapter />} />
-        <Route path="/full-book" element={<FullBook />} />
+        <Route path="/full-book" element={<DashboardLayout><FullBook /></DashboardLayout>} />
       </Routes>
     </BrowserRouter>
   );
