@@ -7,6 +7,11 @@ export const NewChapterWrapper = styled.div`
     width: 80%;
     margin-right: 10px;
     border-radius: 40px;
+
+    @media ${theme.media.lg} {
+        width: 100%;
+        margin-right: 0;
+    }
 `;
 
 export const NewChapterContainer = styled.div`
@@ -58,12 +63,18 @@ export const ButtonContainer = styled.div`
   width: 40%;
   position: absolute;
   z-index: 1;
-  bottom: -40px;
+  bottom: -90px;
   justify-content: center;
   align-items: center;
 
   @media ${theme.media.lg} {
     bottom: 40px;
+    width: 50%;
+  }
+
+  @media ${theme.media.md} {
+    width: 70%;
+    bottom: 0px;
   }
 
   .AddChapter {
@@ -80,7 +91,7 @@ export const ButtonContainer = styled.div`
   }
 
   .next {
-    background: ${theme.colors.transparent};
+    background: ${theme.colors.transparnt};
     border: none;
     color: ${theme.colors.black};  
     font-family: ${theme.font.Geologica};

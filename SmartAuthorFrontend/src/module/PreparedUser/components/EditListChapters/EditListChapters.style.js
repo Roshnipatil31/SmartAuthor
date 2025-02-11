@@ -2,61 +2,61 @@ import styled from "styled-components";
 import theme from "../../../../theme/Themes";
 
 export const SidebarContainer = styled.div`
-  width: 20%;
-  height: 85vh;
+  width: 250px;
+  height: 87vh;
   padding: 15px;
-  margin: 0px 0px 10px 10px;
   background-color: ${theme.colors.white};
   border-right: 1px solid ${theme.colors.inputborder};
-
-  @media ${theme.media.xl} {
-    width: 27%;
-  }
-
-  @media ${theme.media.lg} {
-    width: 20%;
-  }
-
-  .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
 
-.modal-content {
-  background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 500px;
-    height: 80vh;
-    overflow-y: scroll;
+  &.open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 990px) {
+    transform: translateX(0);
     position: relative;
+  }
 
-    @media (max-width: 576px) {
-      min-width: 300px;
-      height: 105vh;
-    }
-}
+  @media ${theme.media.lg} {
+    height: 100vh;
+  }
+`;
 
-.close-button {
+export const SidebarOverlay = styled.div`
+  display: none;
+
+  @media (min-width: 990px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+  }
+`;
+
+export const HamburgerButton = styled.button`
   position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: ${theme.font.size.xlarge};
-    background: ${theme.colors.transparnt};
-    color: ${theme.colors.inputborder};
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
+  top: 95px;
+  left: 1rem;
+  background: ${theme.colors.white};
+  border: 1px solid ${theme.colors.inputborder};
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 979;
 
+  @media (min-width: 990px) {
+    display: none;
+  }
 `;
 
 export const UserName = styled.h3`
@@ -72,7 +72,7 @@ export const ButtonGroup = styled.div`
 
   @media ${theme.media.lg} {
     flex-direction: column;
-    align-items: anchor-center;
+    align-items: center;
   }
 `;
 
@@ -86,8 +86,6 @@ export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   gap: 10px;
-
-  
 `;
 
 export const EditCoverButton = styled.button`
@@ -129,8 +127,8 @@ export const TagContainer = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 15px;
-  position: absolute;
-  bottom: 0px;
+  position: fixed;
+  bottom: 40px;
 
   @media ${theme.media.lg} {
     flex-direction: column;
@@ -139,7 +137,7 @@ export const TagContainer = styled.div`
 `;
 
 export const Tag = styled.button`
-  background-color:${theme.colors.navy};
+  background-color: ${theme.colors.navy};
   color: ${theme.colors.white};
   border: none;
   padding: 10px;
