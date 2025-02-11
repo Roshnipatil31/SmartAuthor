@@ -108,12 +108,12 @@ export const ButtonContainer = styled.div`
 
 /* ======= MODAL STYLES ======= */
 export const ModalOverlay = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  // background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,10 +129,10 @@ export const ModalContent = styled.div`
 
   .close-button {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 30%;
+    right: 40px;
     background: none;
-    color: ${theme.colors.white};
+    color: ${theme.colors.black};
     border: none;
     font-size: 20px;
     cursor: pointer;
