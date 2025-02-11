@@ -14,36 +14,8 @@ import {
 
 import contactImage from "../../../../assets/ContactUs.png"; // Ensure this image exists in the assets folder
 
-toast.configure();
 
-const notifyError = (message) => {
-    console.log("Toast Error:", message); // Debugging log
-    toast.error(message, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  };
 
-// Function to trigger success toast
-const notifySuccess = (message) => {
-    console.log("Toast Success:", message); // Debugging log
-    toast.success(message, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  };
 
 const ContactUsComponent = () => {
   const [formData, setFormData] = useState({
@@ -52,32 +24,35 @@ const ContactUsComponent = () => {
     message: "",
   });
 
-  const validate = () => {
-    let isValid = true;
-    
-    if (!formData.name.trim()) {
-      notifyError("Name is required");
-      isValid = false;
-    } else if (!/^[A-Za-z\s]+$/.test(formData.name)) {
-      notifyError("Name should contain only letters");
-      isValid = false;
-    }
+  
+const notifyError = (message) => {
+  console.log("Toast Error:", message); // Debugging log
+  toast.error(message, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
-    if (!formData.email.trim()) {
-      notifyError("Email is required");
-      isValid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      notifyError("Enter a valid email");
-      isValid = false;
-    }
-
-    if (!formData.message.trim()) {
-      notifyError("Message cannot be empty");
-      isValid = false;
-    }
-
-    return isValid;
-  };
+// Function to trigger success toast
+const notifySuccess = (message) => {
+  console.log("Toast Success:", message); // Debugging log
+  toast.success(message, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -91,10 +66,26 @@ const ContactUsComponent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      notifySuccess("Form submitted successfully!");
-      setFormData({ name: "", email: "", message: "" });
+    const namePattern = /^[A-Za-z\s]+$/;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (!namePattern.test(formData.name)) {
+      notifyError("Please enter a valid Full Name (alphabets only).");
+      return;
     }
+
+    if (!emailPattern.test(formData.email)) {
+      notifyError("Please enter a valid email address.");
+      return;
+    }
+
+    if (formData.message.trim() === "") {
+      notifyError("Please enter a message.");
+      return;
+    }
+
+    // Show success toast and navigate
+    notifySuccess("Message sent successfully!");
   };
 
   return (

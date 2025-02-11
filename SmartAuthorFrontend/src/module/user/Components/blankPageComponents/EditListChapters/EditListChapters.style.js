@@ -29,18 +29,16 @@ export const SidebarContainer = styled.div`
 `;
 
 export const SidebarOverlay = styled.div`
-  display: none;
 
-  @media (min-width: 990px) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    z-index: 999;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+
 `;
 
 export const HamburgerButton = styled.button`
