@@ -183,7 +183,8 @@ export const SectionTitle = styled.div`
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
+  /* justify-content: space-between; */
   cursor: pointer;
   margin-bottom: 20px;
 `;

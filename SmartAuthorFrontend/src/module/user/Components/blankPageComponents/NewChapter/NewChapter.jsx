@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditBookDetails from "../EditBookDetails/EditBookDetails";
-import AddChapter from "../../../user/Components/Addchapter/Addchapter"; // Import AddChapter component
-import PreviewPage from "../../../user/Components/Preview/Preview"; // Import PreviewPage component (create this component as needed)
+import AddChapter from "../../Addchapter/Addchapter";
+import PreviewPage from "../../Preview/Preview"; // Import PreviewPage component (create this component as needed)
 import {
   NewChapterWrapper,
   NewChapterContainer,

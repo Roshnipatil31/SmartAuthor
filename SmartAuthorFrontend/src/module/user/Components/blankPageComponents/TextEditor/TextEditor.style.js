@@ -15,6 +15,7 @@ export const TextEditorWrapper = styled.div`
     scrollbar-width: none;
     position: relative;
     z-index: 0;
+    /* width: 80%; */
 
     @media ${theme.media.lg} {
       height: 78vh;
