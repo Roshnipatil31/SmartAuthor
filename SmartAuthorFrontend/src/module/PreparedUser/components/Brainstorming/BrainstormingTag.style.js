@@ -3,51 +3,50 @@ import theme from "../../../../theme/Themes";
 
 export const Container = styled.div`
   margin: auto;
-  padding: 10px;
+  // padding: 10px;
  width: auto;
 
-  .circle1 {
-  width: 40%;  
-  height: 60%;  
-   border-radius: 50%;
-  background: #26507333;
-  position: fixed;
-  z-index: -1;
-  right: 0;
-  top: 20%;
-  left: 80%;
-  }
-  .circle2{
-  width: 10%;   
-  height: 20%;  
-  background:rgba(204, 209, 213, 0.27);
-  border-radius: 50%;
-  position: fixed;
-  z-index: -1;
-  top: 80%;
-  left: 20%;
-  }
+  // .circle1 {
+  // width: 40%;  
+  // height: 60%;  
+  //  border-radius: 50%;
+  // background: #26507333;
+  // position: fixed;
+  // z-index: 1;
+  // right: 0;
+  // top: 15%;
+  // left: 65%;
+  // }
+  // .circle2{
+  // width: 10%;   
+  // height: 15%;  
+  // background:rgba(204, 209, 213, 0.27);
+  // border-radius: 50%;
+  // position: fixed;
+  // z-index: 3;
+  // top: 75%;
+  // left: 35%;
+  // }
 
-  .circle3{
-  width: 40%;   
-  height: 80%;  
-  background: #26507333;
-  border-radius: 50%;
-  position: fixed;
-  z-index: -1;
-  right: 70%;
-  top: 80%;
-  }
-
+  // .circle3{
+  // width: 40%;   
+  // height: 80%;  
+  // background: #26507333;
+  // border-radius: 50%;
+  // position: fixed;
+  // z-index: 1;
+  // right: 60%;
+  // top: 75%;
+  // }
 `;
 
 export const QuestionTitle = styled.h2`
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 500;
   font-family:${theme.font.family};
   text-align: center;
   margin:0;
-  padding: 10px 0px 40px 0px;
+  padding: 0px 0px 20px 0px;
 `;
 
 export const OptionsContainer = styled.div`
@@ -60,15 +59,15 @@ export const OptionsContainer = styled.div`
 `;
 
 export const Option = styled.div`
-  width: 50%;
+  width: 70%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 12px;
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  margin: 10px;
   margin-left: 30px;
   background: #EFEAD342;
 
@@ -84,23 +83,22 @@ export const Option = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  margin: 20px 0;
+  margin: 10px 0;
   justify-content: space-between;  
-  width: 60%;
+  width: 90%;
   
-
   .prevbut {
     background: #8DA1AD;
     font-family:${theme.font.family};
-    font-size: 16px;
+    font-size: 15px;
     color: ${theme.colors.white};
     border: none;
-    padding: 10px 15px;
+    padding: 0px;
     border-radius: 5px;
     cursor: pointer;
-    margin: 10px 25px;
+    margin: 10px 15px;
     font-weight: 500;
-    width: 20%;
+    width: 30%;
 
      &:disabled {
     cursor: not-allowed;
@@ -111,14 +109,14 @@ export const ButtonContainer = styled.div`
     background: ${theme.colors.navy};
     color: ${theme.colors.white};
     font-family:${theme.font.family};
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 10px;
     border-radius: 5px;
-    margin: 10px 65px;
+    margin: 10px 15%;
     cursor: pointer;
-    width: 20%;
+    width: 30%;
     }
 `;
 
