@@ -18,6 +18,7 @@ import SemiPrapared from "./module/user/Pages/SemiPrepared/SemiPrapared";
 import UnPreparedUsers from "./module/user/Pages/UnPreparedUsers/UnPreparedUsers";
 import EditBookDetails from "./module/PreparedUser/components/EditBookDetails/EditBookDetails";
 import Addchapter from "./module/user/Components/Addchapter/Addchapter";
+import FullBook from "./module/user/Pages/FullBook/FullBook";
 
 // Layout for Dashboard & MyLibrary
 const DashboardLayout = ({ children }) => (
@@ -50,6 +51,7 @@ function App() {
         <Route path="/UnPreparedUsers" element={<DashboardLayout>< UnPreparedUsers /></DashboardLayout>} />
         <Route path="/edit-book" element={<EditBookDetails />} />
         <Route path="/addchapter" element={<Addchapter />} />
+        <Route path="/full-book" element={<FullBook />} />
       </Routes>
     </BrowserRouter>
   );
