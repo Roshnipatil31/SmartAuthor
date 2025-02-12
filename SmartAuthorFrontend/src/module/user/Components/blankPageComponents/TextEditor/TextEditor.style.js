@@ -10,17 +10,23 @@ export const TextEditorWrapper = styled.div`
     height: 75vh;
     background: ${theme.colors.white};
     outline: none;
-    padding: 0 20px;
+    padding:10px 0 0 20px ;
     overflow-y: scroll;
     scrollbar-width: none;
     position: relative;
     z-index: 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
     /* width: 80%; */
 
     @media ${theme.media.lg} {
       height: 78vh;
     }
   }
+
+  .editable [data-slate-placeholder="true"] {
+  padding: 10px 0 0 0px;
+}
 `;
 
 export const TextEditComponents = styled.div`

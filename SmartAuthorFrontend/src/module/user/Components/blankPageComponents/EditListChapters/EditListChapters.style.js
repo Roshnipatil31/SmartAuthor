@@ -81,7 +81,7 @@ export const SidebarContainer = styled.div`
   padding: 15px;
   /* margin: 0px 0px 10px 10px; */
   background-color: ${theme.colors.white};
-  border-right: 1px solid ${theme.colors.inputborder};
+  /* border-right: 1px solid ${theme.colors.inputborder}; */
   position: fixed;
   top: 0;
   left: 0;
