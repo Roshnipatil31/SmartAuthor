@@ -218,6 +218,7 @@ export const Tag = styled.button`
   padding: 10px;
   border-radius: 20px;
   font-size: 12px;
+  cursor: pointer;
 `;
 
 export const IconWrapper = styled.span`
