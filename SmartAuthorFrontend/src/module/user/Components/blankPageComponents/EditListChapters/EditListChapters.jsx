@@ -81,7 +81,7 @@ const EditListChapters = () => {
           </StyledButton>
         </ButtonGroup>
 
-        <EditCoverButton>Edit Cover page</EditCoverButton>
+        <EditCoverButton onClick={() => navigate("/BookCover")}>Edit Cover page</EditCoverButton>
         <Section>
           <SectionTitle onClick={toggleManuscript}>
             <IconWrapper>
