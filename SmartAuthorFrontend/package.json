@@ -17,6 +17,7 @@
     "@slate-editor/font-family-plugin": "^5.1.0",
     "bootstrap": "^5.3.3",
     "framer-motion": "^12.0.6",
+    "jspdf": "^2.5.2",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^18.3.1",
