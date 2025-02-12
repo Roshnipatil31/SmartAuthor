@@ -20,6 +20,7 @@ import EditBookDetails from "./module/user/Components/blankPageComponents/EditBo
 import Addchapter from "./module/user/Components/Addchapter/Addchapter";
 import FullBook from "./module/user/Pages/FullBook/FullBook";
 import BookCoverPage from "./module/user/Pages/BookCoverPage/BookCoverPage";
+import FeedbackPage from "./module/user/Pages/FeedbackPage/FeedbackPage";
 
 // Layout for Dashboard & MyLibrary
 const DashboardLayout = ({ children }) => (
@@ -54,6 +55,9 @@ function App() {
         <Route path="/addchapter" element={<Addchapter />} />
         <Route path="/full-book" element={<DashboardLayout><FullBook /></DashboardLayout>} />
         <Route path="/BookCover" element={<DashboardLayout><BookCoverPage /></DashboardLayout>} />
+        <Route path="/feedback" element={<DashboardLayout><FeedbackPage /></DashboardLayout>} />
+
+
       </Routes>
     </BrowserRouter>
   );
