@@ -12,8 +12,10 @@ import {
   Button,
   Dropdown,
   DownloadButton,
+  DropdownWrapper,
 } from "./Preview.style";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { IoMdArrowDropdown } from "react-icons/io";
 import pagebook from "../../../../assets/2page book.png";
 import kindle from "../../../../assets/kindle.png";
 
@@ -27,7 +29,6 @@ const Preview = () => {
           <TabletWrapper>
             <DeviceFrame>
               <TabletImage src={kindle} alt="Book Cover" />
-              
             </DeviceFrame>
             <hr className="previewhr"/>
           </TabletWrapper>
@@ -54,25 +55,19 @@ const Preview = () => {
       <h2 className="previewtitle">Preview</h2>
 
       <Controls>
-        <Dropdown
-          value={device}
-          onChange={(e) => setDevice(e.target.value)}
-        >
-          <option value="Tablet">Tablet</option>
-          <option value="Book">Book</option>
-          <option value="Kindle">Kindle</option>
-        </Dropdown>
-        <Dropdown>
-          <option value="Inter">Inter</option>
-          <option value="Arial">Arial</option>
-          <option value="Serif">Serif</option>
-        </Dropdown>
+        <DropdownWrapper>
+          <Dropdown value={device} onChange={(e) => setDevice(e.target.value)}>
+            <option value="Tablet">Tablet</option>
+            <option value="Book">Book</option>
+            <option value="Kindle">Kindle</option>
+          </Dropdown>
+          <IoMdArrowDropdown className="dropdown-icon" />
+        </DropdownWrapper>
       </Controls>
 
       {renderPreview()}
 
       <Controls>
-
         <Button>
           <MdOutlineKeyboardArrowLeft /> Chapter
         </Button>

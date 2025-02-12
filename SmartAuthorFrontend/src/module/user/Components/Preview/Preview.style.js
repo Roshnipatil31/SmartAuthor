@@ -31,25 +31,31 @@ export const Controls = styled.div`
   margin-bottom: 15px;
   position: relative;
 `;
+export const DropdownWrapper = styled.div`
+  position: relative;
+  display: inline-block;
 
-export const Dropdown = styled.select`
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  cursor: pointer;
-  width: 35%;
-  background: ${theme.colors.previewbtn};
-  // appearance: none;
+  .dropdown-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
 `;
 
-// export const DropdownIcon = styled(IoMdArrowDropdown)`
-//   position: absolute;
-//   padding: 5px;
-//   pointer-events: none; /* So clicks go to the select */
-//   transform: translateY(-50%);
-//   color: black;
-//   `;
+export const Dropdown = styled.select`
+  width: 150px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none; /* Hides default arrow */
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding-right: 30px; /* Space for custom icon */
+`;
+
 
 export const TabletWrapper = styled.div`
   display: flex;
