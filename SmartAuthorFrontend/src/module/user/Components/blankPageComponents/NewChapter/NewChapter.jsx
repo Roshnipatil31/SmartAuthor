@@ -12,6 +12,8 @@ import {
   ButtonContainer,
   ModalOverlay, // New styles for modal
   ModalContent,
+  ModalOverlays, // New styles for modal
+  ModalContents,
 } from "./NewChapter.style";
 import TextEditor from "../TextEditor/TextEditor";
 import { useNavigate } from "react-router-dom";
@@ -61,8 +63,8 @@ const NewChapter = () => {
 
       {/* Modal for Preview Page */}
       {isPreviewOpen && (
-        <ModalOverlay onClick={() => setIsPreviewOpen(false)}>
-          <ModalContent onClick={(e) => e.stopPropagation()}>
+        <ModalOverlays onClick={() => setIsPreviewOpen(false)}>
+          <ModalContents onClick={(e) => e.stopPropagation()}>
             <PreviewPage />
             <button
               className="close-button"
@@ -70,8 +72,8 @@ const NewChapter = () => {
             >
               ✖
             </button>
-          </ModalContent>
-        </ModalOverlay>
+          </ModalContents>
+        </ModalOverlays>
       )}
 
       <ButtonContainer>

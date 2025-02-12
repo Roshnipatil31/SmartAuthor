@@ -23,19 +23,19 @@ const Preview = () => {
 
       {/* Device Selection */}
       <Controls>
-        <Dropdown value={device} onChange={(e) => setDevice(e.target.value)} >
+        <Dropdown value={device} onChange={(e) => setDevice(e.target.value)} > <DropdownIcon/>
           <option value="Tablet">Tablet</option>
           <option value="Book">Book</option>
           <option value="Kindle">Kindle</option> 
         </Dropdown> 
-        <DropdownIcon style={{ top:"330px", right:"270px" }}/>
+        {/* <DropdownIcon style={{ top:"330px", right:"270px" }}/> */}
 
-        <Dropdown> 
+        <Dropdown>  <DropdownIcon/>
           <option value="Inter">Inter</option>
           <option value="Arial">Arial</option>
           <option value="Serif">Serif</option>
         </Dropdown> 
-        <DropdownIcon style={{ top:"330px", right:"70px" }}/>
+        {/* <DropdownIcon style={{ top:"330px", right:"70px" }}/> */}
       </Controls>
 
       {/* Book Preview */}

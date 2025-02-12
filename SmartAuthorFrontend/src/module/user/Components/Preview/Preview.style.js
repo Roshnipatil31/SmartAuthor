@@ -7,9 +7,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
-  margin-left: auto;
-  margin-right: 0%;
-  margin-top: 20%;
+  /* margin-left: auto; */
+  /* margin-right: 0%; */
+  float: inline-end;
+  margin-top: 10%;
   width: 30%;
   height: 60%;
   background: ${theme.colors.white};
@@ -67,7 +68,6 @@ export const DeviceFrame = styled.div`
   align-items: center;
   justify-content: center;
   background: #f9f9f9;
-}
 `;
 
 export const BookContent = styled.div`

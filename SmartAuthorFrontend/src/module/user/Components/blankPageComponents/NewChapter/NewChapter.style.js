@@ -124,7 +124,7 @@ export const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  // background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,10 +140,43 @@ export const ModalContent = styled.div`
 
   .close-button {
     position: absolute;
-    top: 30%;
-    right: 40px;
+    top: 0%;
+    right: 10%;
     background: none;
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+`;
+
+
+export const ModalOverlays = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.5); */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  z-index: 1000;
+`;
+
+export const ModalContents = styled.div`
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+
+  .close-button {
+    position: absolute;
+    top: 0%;
+    right: 10%;
+    background: none;
+    color: ${theme.colors.white};
     border: none;
     font-size: 20px;
     cursor: pointer;
