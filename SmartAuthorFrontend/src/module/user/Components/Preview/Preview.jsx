@@ -1,70 +1,86 @@
 import React, { useState } from "react";
 import {
   Container,
-  PreviewWrapper,
+  TabletWrapper,
   DeviceFrame,
-  BookContent,
+  TabletImage,
   Controls,
+  BookWrapper,
+  BookImage,
+  KindleWrapper,
+  KindleImage,
   Button,
   Dropdown,
-  DropdownIcon,
   DownloadButton,
 } from "./Preview.style";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { RxCross2 } from "react-icons/rx";
-
+import pagebook from "../../../../assets/2page book.png";
+import kindle from "../../../../assets/kindle.png";
 
 const Preview = () => {
   const [device, setDevice] = useState("Tablet");
+
+  const renderPreview = () => {
+    switch (device) {
+      case "Tablet":
+        return (
+          <TabletWrapper>
+            <DeviceFrame>
+              <TabletImage src={kindle} alt="Book Cover" />
+              
+            </DeviceFrame>
+            <hr className="previewhr"/>
+          </TabletWrapper>
+        );
+      case "Book":
+        return (
+          <BookWrapper>
+            <BookImage src={pagebook} alt="Book Cover" />
+          </BookWrapper>
+        );
+      case "Kindle":
+        return (
+          <KindleWrapper>
+            <KindleImage src={kindle} alt="Book Cover" />
+          </KindleWrapper>
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
     <Container>
       <h2 className="previewtitle">Preview</h2>
 
-      {/* Device Selection */}
       <Controls>
-        <Dropdown value={device} onChange={(e) => setDevice(e.target.value)} > <DropdownIcon/>
+        <Dropdown
+          value={device}
+          onChange={(e) => setDevice(e.target.value)}
+        >
           <option value="Tablet">Tablet</option>
           <option value="Book">Book</option>
-          <option value="Kindle">Kindle</option> 
-        </Dropdown> 
-        {/* <DropdownIcon style={{ top:"330px", right:"270px" }}/> */}
-
-        <Dropdown>  <DropdownIcon/>
+          <option value="Kindle">Kindle</option>
+        </Dropdown>
+        <Dropdown>
           <option value="Inter">Inter</option>
           <option value="Arial">Arial</option>
           <option value="Serif">Serif</option>
-        </Dropdown> 
-        {/* <DropdownIcon style={{ top:"330px", right:"70px" }}/> */}
+        </Dropdown>
       </Controls>
 
-      {/* Book Preview */}
-      <PreviewWrapper>
-        <DeviceFrame>
-          <BookContent>
-            <h3 className="urbooklayout">YOUR BOOK LAYOUT</h3>
-            <h4 className="chapterone">- CHAPTER ONE -</h4>
-            <p className="longpara">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              faucibus malesuada lectus, at sodales massa gravida ut. Nulla
-              ornare metus id felis ornare, eget malesuada nulla bibendum.
-              Integer posuere nisi eu nisi sagittis pharetra.
-            </p>
-            <p className="pagepara">Page 5</p>
+      {renderPreview()}
 
-            <hr className="previewhr"/>
-
-          </BookContent>
-        </DeviceFrame>
-      </PreviewWrapper>
-
-      {/* Navigation Buttons */}
       <Controls>
-        <Button> <MdOutlineKeyboardArrowLeft/> Chapter</Button>
-        <Button>Chapter <MdOutlineKeyboardArrowRight/></Button>
+
+        <Button>
+          <MdOutlineKeyboardArrowLeft /> Chapter
+        </Button>
+        <Button>
+          Chapter <MdOutlineKeyboardArrowRight />
+        </Button>
       </Controls>
 
-      {/* Download Button */}
       <DownloadButton>Download Book</DownloadButton>
     </Container>
   );

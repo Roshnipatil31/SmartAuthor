@@ -29,6 +29,7 @@ export const Controls = styled.div`
   display: flex;
   gap: 30%;
   margin-bottom: 15px;
+  position: relative;
 `;
 
 export const Dropdown = styled.select`
@@ -37,28 +38,42 @@ export const Dropdown = styled.select`
   border-radius: 5px;
   border: 1px solid #ddd;
   cursor: pointer;
-  width: 45%;
+  width: 35%;
   background: ${theme.colors.previewbtn};
-  appearance: none;
+  // appearance: none;
 `;
 
-export const DropdownIcon = styled(IoMdArrowDropdown)`
-  position: absolute;
-  padding: 5px;
-  pointer-events: none; /* So clicks go to the select */
-  transform: translateY(-50%);
-  color: black;
-  `;
+// export const DropdownIcon = styled(IoMdArrowDropdown)`
+//   position: absolute;
+//   padding: 5px;
+//   pointer-events: none; /* So clicks go to the select */
+//   transform: translateY(-50%);
+//   color: black;
+//   `;
 
-export const PreviewWrapper = styled.div`
+export const TabletWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 0px;
+
+  .previewhr{
+    width: 10%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 3px;
+    background: ${theme.colors.black};
+    margin: 0px;
+    position: relative;
+    bottom: 20px;
+  }
 `;
 
 export const DeviceFrame = styled.div`
-  width: 250px;
-  height: 300px;
+  width: 200px;
+  height: 250px;
   border-radius: 20px;
   border-width: 20px 20px 40px 20px; 
   border-style: solid;
@@ -67,49 +82,46 @@ export const DeviceFrame = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f9f9f9;
+  // background: #f9f9f9;
+
+  
 `;
 
-export const BookContent = styled.div`
+export const TabletImage = styled.img`
   width: 100%;
   height: 90%;
-  background: white;
+`;
+
+export const BookWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   padding: 15px;
+`;
+
+export const BookImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+export const KindleWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  // background: white;
+  // padding: 15px;
   border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-  .urbooklayout {
-    font-size: 14px;
-    font-weight: bold;
-    text-align:center;
-  }
-
-  .chapterone {
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align:center;
-  }
-
-  .longpara {
-    font-size: 12px;
-    color: #444;
-    text-align: left;
-  }
-
-  .pagepara {
-    font-size: 12px;
-    color: #444;
-    text-align: center;
-  }
-
-  .previewhr{
-    width: 20%;
-    align-items: center;
-    height: 2px;
-    background: ${theme.colors.black};
-    margin-top: 55%;
-  }
+export const KindleImage = styled.img`
+  width: 70%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
 `;
 
 export const Button = styled.button`
