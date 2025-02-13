@@ -25,7 +25,7 @@ export const TextEditorWrapper = styled.div`
   }
 
   .editable [data-slate-placeholder="true"] {
-  padding: 10px 0 0 0px;
+    margin-top: 10px;
 }
 `;
 
@@ -40,7 +40,7 @@ export const TextSize = styled.div`
   padding: 5px 20px;
   border-right: 1px solid ${theme.colors.inputborder};
   text-align: center;
-  width: 20%;
+  width: 15%;
   select {
     padding: 5px;
     border: none;
@@ -48,7 +48,7 @@ export const TextSize = styled.div`
   }
 
   @media ${theme.media.lg} {
-    width: 15%;
+    /* width: 15%; */
     select {
       font-size: ${theme.font.size.xsmall};
       width: 70px;
@@ -60,7 +60,7 @@ export const TextFamily = styled.div`
   padding: 5px 20px;
   border-right: 1px solid ${theme.colors.inputborder};
   text-align: center;
-  width: 20%;
+  width: 15%;
   select {
     padding: 5px;
     border: none;
@@ -69,7 +69,7 @@ export const TextFamily = styled.div`
   }
 
   @media ${theme.media.lg} {
-    width: 15%;
+    /* width: 15%; */
     select {
       font-size: ${theme.font.size.xsmall};
       width: 70px;
@@ -81,7 +81,7 @@ export const TextFontSize = styled.div`
   padding: 5px 20px;
   border-right: 1px solid ${theme.colors.inputborder};
   text-align: center;
-  width: 20%;
+  width: 14%;
   span {
     padding: 5px;
     border: none;
