@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
-import jsPDF from 'jspdf';
-import { 
-  SingleBookContentWrapper, 
-  ScrollableSection, 
-  PageContainer, 
-  Page, 
-  PageHeader, 
-  Content, 
-  PageNavigation, 
-  NavigationButton, 
-  BookTitle, 
-  SubTitle, 
-  AboutAuthor, 
-  DownloadButton
-} from './SingleBookContent.styles';
+import React, { useState } from "react";
+import jsPDF from "jspdf";
+import {
+  SingleBookContentWrapper,
+  ScrollableSection,
+  PageContainer,
+  Page,
+  PageHeader,
+  Content,
+  PageNavigation,
+  NavigationButton,
+  BookTitle,
+  SubTitle,
+  AboutAuthor,
+  DownloadButton,
+} from "./SingleBookContent.styles";
 
 const SingleBookContent = ({ viewPage }) => {
   const pagesPerChapter = 15;
   const totalPages = 15 + 10;
   const [currentPage, setCurrentPage] = useState(1);
 
-  const dummyContent = Array.from({ length: totalPages }, (_, index) => 
-    `This is dummy content for Page ${index + 1} of Chapter ${viewPage}.`
+  const dummyContent = Array.from(
+    { length: totalPages },
+    (_, index) =>
+      `This is dummy content for Page ${index + 1} of Chapter ${viewPage}.`
   );
 
   const handleNextPage = () => {
@@ -38,13 +40,17 @@ const SingleBookContent = ({ viewPage }) => {
 
   const handleDownload = () => {
     const doc = new jsPDF();
-    doc.setFont('helvetica', 'normal');
+    doc.setFont("helvetica", "normal");
     doc.setFontSize(14);
-    
-    doc.text('Book Title: The Art of Learning', 10, 10);
-    doc.text('Sub-Title: Mastering the Craft', 10, 20);
-    doc.text('About the Author: John Doe is a renowned educator with over 20 years of experience in teaching and research.', 10, 30);
-    
+
+    doc.text("Book Title: The Art of Learning", 10, 10);
+    doc.text("Sub-Title: Mastering the Craft", 10, 20);
+    doc.text(
+      "About the Author: John Doe is a renowned educator with over 20 years of experience in teaching and research.",
+      10,
+      30
+    );
+
     let y = 40;
     dummyContent.forEach((content, index) => {
       doc.text(`Chapter ${viewPage} - Page ${index + 1}`, 10, y);
@@ -58,26 +64,45 @@ const SingleBookContent = ({ viewPage }) => {
       }
     });
 
-    doc.save('The_Art_of_Learning.pdf');
+    doc.save("The_Art_of_Learning.pdf");
   };
 
   return (
     <SingleBookContentWrapper>
       <ScrollableSection>
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <DownloadButton onClick={handleDownload}>Download Book</DownloadButton>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <DownloadButton onClick={handleDownload}>
+            Download Book
+          </DownloadButton>
         </div>
 
         <BookTitle>Book Title: The Art of Learning</BookTitle>
         <SubTitle>Sub-Title: Mastering the Craft</SubTitle>
         <AboutAuthor>
-          About the Author: John Doe is a renowned educator with over 20 years of experience in teaching and research.
+          About the Author: John Doe is a renowned educator with over 20 years
+          of experience in teaching and research.
         </AboutAuthor>
 
-        <PageContainer>
+        <PageContainer
+          style={{
+            gridTemplateColumns:
+              viewPage === 1
+                ? "repeat(1, 1fr)"
+                : viewPage === 2
+                ? "repeat(2, 1fr)"
+                : "repeat(4, 1fr)",
+          }}
+        >
           {dummyContent.map((content, index) => (
-            <Page key={index}>
-              <PageHeader>Chapter {viewPage} - Page {index + 1}</PageHeader>
+            <Page
+              key={index}
+              style={{
+                width: viewPage === 1 ? "100%" : viewPage === 2 ? "90%" : "80%",
+              }}
+            >
+              <PageHeader>
+                Chapter {viewPage} - Page {index + 1}
+              </PageHeader>
               <Content>
                 <p>{content}</p>
               </Content>
@@ -91,7 +116,10 @@ const SingleBookContent = ({ viewPage }) => {
           Previous
         </NavigationButton>
         <span>{`Page ${currentPage} of ${totalPages}`}</span>
-        <NavigationButton onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <NavigationButton
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
           Next
         </NavigationButton>
       </PageNavigation>

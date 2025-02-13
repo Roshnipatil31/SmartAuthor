@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import StaticImage from "../../../../../assets/StaticImage.png";
 import book3 from "../../../../../assets/Book3.jpg";
 
-const BookCoverGenarate = () => {
+const BookCoverGenarate = ({selectedCover}) => {
   const navigate = useNavigate();
   const [selectedColor, setSelectedColor] = useState("#004d40");
 
@@ -25,7 +25,7 @@ const BookCoverGenarate = () => {
         <Title>Book Cover</Title>
         <BookCoverImage>
           <StaticCoverImage src={StaticImage} alt="Book Cover" />
-          <DynamicImage src={book3} alt="Book Cover" style={{ borderColor: selectedColor }} />
+          <DynamicImage src={selectedCover || book3} alt="Book Cover" style={{ borderColor: selectedColor }} />
         </BookCoverImage>
 
         {/* Color Selection */}

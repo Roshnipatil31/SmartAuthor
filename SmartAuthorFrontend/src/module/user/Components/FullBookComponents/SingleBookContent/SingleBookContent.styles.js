@@ -67,11 +67,12 @@ export const DownloadButton = styled.button`
 // Pages Display
 export const PageContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); */
   gap: 20px;
-  justify-content: center;
-  width: 100%;
+  /* justify-content: center; */
+  /* width: 100%; */
   padding: 20px;
+  gap:10px;
   color: ${theme.colors.text};
 `;
 
@@ -87,11 +88,6 @@ export const Page = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 12px;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
 `;
 
 export const PageHeader = styled.h3`

@@ -25,6 +25,7 @@ const theme = {
     previewBg: "#F9F7EE",
     previewbtn: "#D9D9D9",
     dropdownBg: "#494949",
+    bordertag: "#A8A8A8",
     BackgroundGradient: "linear-gradient(to bottom, #265073 0%, #F9F7EE 100%)", 
     buttonGradient: "linear-gradient(90deg, rgba(38,80,115,1) 0%, rgba(72,151,217,1) 35%);"
   },
