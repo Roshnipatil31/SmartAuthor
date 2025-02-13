@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import theme from '../../../../../theme/Themes';
-import { Button } from '../../../Pages/FullBook/FullBook.styles';
+import styled from "styled-components";
+import theme from "../../../../../theme/Themes";
+import { Button } from "../../../Pages/FullBook/FullBook.styles";
 
 export const OrientationContainer = styled.div`
   padding: 15px;
@@ -20,43 +20,46 @@ export const Select = styled.select`
   border: 1px solid ${theme.colors.inputborder};
   background-color: ${theme.colors.dropdownBg};
   color: ${theme.colors.white};
+  margin-top: -10px;
 `;
 
 export const DeviceContainer = styled.div`
   margin-bottom: 20px;
   display: flex;
-  // align-items: center;
   justify-content: space-between;
-
-
+  margin-top: -20px;
+   font-size: ${theme.font.size.small};
 `;
-export const Orientation = styled.div`   
-// gap: 10px;
 
+export const Orientation = styled.div`
+  gap: 10px;
+   font-size: ${theme.font.size.small};
 `;
 export const ViewPageContainer = styled.div`
-  margin-top: 20px;
+  margin-top: -10px;
 `;
 
 export const ViewPageOption = styled.div`
   display: inline-block;
-  width: 60px; /* Adjusted width to accommodate icons */
-  height: 60px; /* Adjusted height to accommodate icons */
+  width: 60px;
+  height: 60px;
   margin-right: 10px;
   cursor: pointer;
-  text-align: center; /* Centering the icon inside the box */
-  line-height: 60px; /* Vertically center the icon */
+  text-align: center;
+  line-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid ${({ selected }) => (selected ? theme.colors.blue1 : "transparent")};
+  border-radius: 6px;
   
   &:hover {
     background-color: ${theme.colors.blue1};
   }
 
   svg {
-    width: 30px; /* Icon size */
-    height: 30px; /* Icon size */
+    width: 35px;
+    height: 35px;
   }
 `;
 
@@ -68,7 +71,7 @@ export const Chapter = styled.div`
   cursor: pointer;
   padding: 8px;
   background-color: ${theme.colors.white};
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   border-radius: 4px;
 
   &:hover {
@@ -83,6 +86,7 @@ export const EditButton = styled(Button)`
   margin-top: 20px;
   width: 236px;
   border-radius: 10px;
+  font-size: ${theme.font.size.small};
 
   &:hover {
     background-color: ${theme.colors.blue1};
@@ -96,9 +100,15 @@ export const ContentsHeader = styled.div`
   gap: 5px;
   font-size: ${theme.font.size.large};
   color: ${theme.colors.text};
-  margin-bottom: 10px;
+  margin-bottom: -15px;
 
   &:hover {
     color: ${theme.colors.navy};
   }
+`;
+
+export const SelectedIcon = styled.div`
+  background-color: ${theme.colors.blue1};
+  border-radius: 50%;
+  padding: 5px;
 `;
