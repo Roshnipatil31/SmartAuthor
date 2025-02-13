@@ -4,7 +4,7 @@ import { FiColumns, FiGrid } from "react-icons/fi"; // Two Pages & Grid Icons
 import { IoPhonePortraitSharp } from "react-icons/io5"; // Portrait Icon
 import { MdStayCurrentLandscape } from "react-icons/md"; // Landscape Icon
 import { RiArrowDropRightLine, RiArrowDropDownLine } from "react-icons/ri"; // Expand/Collapse Icons
-import {
+import { 
   OrientationContainer,
   Title,
   Select,
@@ -16,16 +16,22 @@ import {
   ViewPageOption,
   Orientation,
   ContentsHeader,
+  SelectedIcon,
 } from "./BooksOrientation.styles";
 
 const BooksOrientation = ({ orientation, setOrientation, setViewPage }) => {
   const [showChapters, setShowChapters] = useState(false);
+  const [selectedDevice, setSelectedDevice] = useState("Tablet"); // Default device: Tablet
+  const [selectedOrientation, setSelectedOrientation] = useState("portrait"); // Default: Portrait
+  const [selectedViewPage, setSelectedViewPage] = useState(3); // Default: Grid view (FiGrid)
 
   const handleOrientationChange = (value) => {
+    setSelectedOrientation(value);
     setOrientation(value);
   };
 
   const handlePageChange = (page) => {
+    setSelectedViewPage(page);
     setViewPage(page);
   };
 
@@ -37,7 +43,7 @@ const BooksOrientation = ({ orientation, setOrientation, setViewPage }) => {
       <DeviceContainer>
         <div>
           <p>Device</p>
-          <Select onChange={(e) => setOrientation(e.target.value)}>
+          <Select value={selectedDevice} onChange={(e) => setSelectedDevice(e.target.value)}>
             <option value="Tablet">Tablet</option>
             <option value="Phone">Phone</option>
             <option value="Laptop">Laptop</option>
@@ -49,11 +55,20 @@ const BooksOrientation = ({ orientation, setOrientation, setViewPage }) => {
           <p>Orientation</p>
           <IoPhonePortraitSharp
             onClick={() => handleOrientationChange("portrait")}
-            style={{ cursor: "pointer", fontSize: "30px", marginRight: "10px" }}
+            style={{
+              cursor: "pointer",
+              fontSize: "30px",
+              marginRight: "10px",
+              color: selectedOrientation === "portrait" ? "#007BFF" : "inherit",
+            }}
           />
           <MdStayCurrentLandscape
             onClick={() => handleOrientationChange("landscape")}
-            style={{ cursor: "pointer", fontSize: "30px" }}
+            style={{
+              cursor: "pointer",
+              fontSize: "30px",
+              color: selectedOrientation === "landscape" ? "#007BFF" : "inherit",
+            }}
           />
         </Orientation>
       </DeviceContainer>
@@ -62,13 +77,13 @@ const BooksOrientation = ({ orientation, setOrientation, setViewPage }) => {
       <ViewPageContainer>
         <p>View Page</p>
         <div style={{ display: "flex", gap: "10px" }}>
-          <ViewPageOption onClick={() => handlePageChange(1)}>
+          <ViewPageOption onClick={() => handlePageChange(1)} selected={selectedViewPage === 1}>
             <LuRectangleVertical />
           </ViewPageOption>
-          <ViewPageOption onClick={() => handlePageChange(2)}>
+          <ViewPageOption onClick={() => handlePageChange(2)} selected={selectedViewPage === 2}>
             <FiColumns />
           </ViewPageOption>
-          <ViewPageOption onClick={() => handlePageChange(3)}>
+          <ViewPageOption onClick={() => handlePageChange(3)} selected={selectedViewPage === 3}>
             <FiGrid />
           </ViewPageOption>
         </div>
@@ -80,11 +95,7 @@ const BooksOrientation = ({ orientation, setOrientation, setViewPage }) => {
       {/* Contents List */}
       <ChapterList>
         <ContentsHeader onClick={() => setShowChapters(!showChapters)}>
-          {showChapters ? (
-            <RiArrowDropDownLine size={24} />
-          ) : (
-            <RiArrowDropRightLine size={24} />
-          )}
+          {showChapters ? <RiArrowDropDownLine size={24} /> : <RiArrowDropRightLine size={24} />}
           <p>Contents</p>
         </ContentsHeader>
         {showChapters &&
@@ -99,3 +110,8 @@ const BooksOrientation = ({ orientation, setOrientation, setViewPage }) => {
 };
 
 export default BooksOrientation;
+
+
+
+
+
