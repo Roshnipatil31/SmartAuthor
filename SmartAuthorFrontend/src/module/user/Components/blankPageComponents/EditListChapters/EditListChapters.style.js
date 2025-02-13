@@ -99,7 +99,7 @@ export const SidebarContainer = styled.div`
   }
 
   @media ${theme.media.lg} {
-    width: 20%;
+    width: 250px;
     height: 100vh;
   }
 
@@ -191,10 +191,10 @@ export const SectionTitle = styled.div`
 
 export const Item = styled.div`
   font-size: ${theme.font.size.small};
-  margin: 20px 0;
+  margin: 20px 0 20px 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   gap: 5px;
 `;
 

@@ -5,8 +5,9 @@ export const NewChapterWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     border-radius: 40px;
+    position: relative;
 
     @media ${theme.media.lg} {
         width: 100%;
@@ -63,7 +64,7 @@ export const ButtonContainer = styled.div`
   width: 40%;
   position: absolute;
   z-index: 1;
-  bottom: -90px;
+  bottom: 0px;
   justify-content: center;
   align-items: center;
 

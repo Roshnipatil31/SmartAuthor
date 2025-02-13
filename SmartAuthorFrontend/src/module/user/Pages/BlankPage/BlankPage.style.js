@@ -17,7 +17,7 @@ export const BlankPageWrapper = styled.div`
     background: ${theme.colors.transparnt};
 
     @media ${theme.media.xl} {
-      margin: 0px;
+      /* margin: 0px; */
       width: 100%;
     }
   }

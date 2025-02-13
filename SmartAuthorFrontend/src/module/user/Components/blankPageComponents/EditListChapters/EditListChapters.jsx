@@ -35,32 +35,27 @@ const EditListChapters = () => {
   const [isElementsOpen, setIsElementsOpen] = useState(true); // Control Elements dropdown
   const navigate = useNavigate();
 
+  // Mock chapters data
+  const chapters = [
+    { id: 1, title: "Chapter 1: The Beginning" },
+    { id: 2, title: "Chapter 2: The Journey" },
+    { id: 3, title: "Chapter 3: The Twist" },
+    { id: 4, title: "Chapter 4: The Resolution" },
+    { id: 5, title: "Chapter 5: The Conclusion" },
+    { id: 6, title: "Chapter 6: The End" },
+  ];
+
   useEffect(() => {
     document.body.classList.toggle("blur-background", isSidebarOpen);
   }, [isSidebarOpen]);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleOpenModals = () => {
-    setIsModalOpen(true);
-  };
-
-  const toggleManuscript = () => {
-    setIsManuscriptOpen(!isManuscriptOpen);
-  };
-
-  // Toggle Elements
-  const toggleElements = () => {
-    setIsElementsOpen(!isElementsOpen);
-  };
+  const toggleManuscript = () => setIsManuscriptOpen(!isManuscriptOpen);
+  const toggleElements = () => setIsElementsOpen(!isElementsOpen);
 
   return (
     <EditListChaptersWapper>
@@ -81,7 +76,11 @@ const EditListChapters = () => {
           </StyledButton>
         </ButtonGroup>
 
-        <EditCoverButton onClick={() => navigate("/BookCover")}>Edit Cover page</EditCoverButton>
+        <EditCoverButton onClick={() => navigate("/BookCover")}>
+          Edit Cover page
+        </EditCoverButton>
+
+        {/* Manuscript Section */}
         <Section>
           <SectionTitle onClick={toggleManuscript}>
             <IconWrapper>
@@ -90,11 +89,13 @@ const EditListChapters = () => {
             <FiBook /> Manuscript
           </SectionTitle>
 
-          {isManuscriptOpen && (
-            <Item>
-              <FiFileText /> Boss Chapter 1
+          {isManuscriptOpen &&
+          chapters.map((chapter) => (
+            <Item key={chapter.id}>
+              <FiFileText /> {chapter.title}
             </Item>
-          )}
+          )) 
+          }
         </Section>
 
         {/* Elements Section */}
@@ -106,18 +107,22 @@ const EditListChapters = () => {
             <FiBook /> Elements
           </SectionTitle>
 
-          {isElementsOpen && (
-            <Item>
-              <FiFileText /> Character 1
-            </Item>
-          )}
+          {isElementsOpen &&
+            chapters.map((chapter) => (
+              <Item key={chapter.id}>
+                <FiFileText /> {chapter.title}
+              </Item>
+            ))}
         </Section>
 
+        {/* Tags Section */}
         <TagContainer>
           <Tag onClick={handleOpenModal}>Brainstorming</Tag>
-          <Tag onClick={handleOpenModals}>Psychiatrist-Inspired</Tag>
+          <Tag onClick={handleOpenModal}>Psychiatrist-Inspired</Tag>
         </TagContainer>
       </SidebarContainer>
+
+      {/* Modal for Brainstorming */}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
